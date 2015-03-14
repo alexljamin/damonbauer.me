@@ -1,0 +1,76 @@
+#wrap {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 50em) {
+    padding: 0;
+  }
+}
+
+.post-list,
+.post {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list li {
+  position: relative;
+  margin-bottom: 3rem;
+
+  &:last-of-type:after { display: none }
+
+  &:after {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    margin-left: -1rem;
+    font-size: 2rem;
+    content: "\2026"
+  }
+}
+
+.post-header {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.post-link {
+  position: relative;
+  padding-right: 1.75rem;
+
+  &:hover:after,
+  &:focus:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1rem;
+    content: "\2192";
+  }
+}
+
+.post-meta {
+  display: block;
+  margin-top: .5rem;
+  font-size: 1rem;
+}
+
+pre {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: $blue;
+}
+
+p code,
+li code {
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  background: rgba(white, 0.75);
+  color: $blue;
+}
+
+.post ul {
+  margin-left: 2rem;
+}

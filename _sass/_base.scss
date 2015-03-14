@@ -1,0 +1,53 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  @extend %Inconsolata;
+  font-size: 18px;
+  background: $blue;
+  color: $text;
+}
+
+p,
+ul {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  color: $red;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: $red;
+  }
+}
+
+b, strong,
+h1, h2, h3,
+header a {
+  @extend %Inconsolata-Bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background-color: rgba($red, 0.8);
+  color: $text;
+}
+
+::selection {
+  background-color: rgba($red, 0.8);
+  color: $text;
+}

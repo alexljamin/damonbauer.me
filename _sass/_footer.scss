@@ -1,0 +1,38 @@
+footer {
+  clear: both;
+  padding: 1rem 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+
+    a {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0;
+      border-bottom: 0;
+      color: transparent;
+
+      &:hover,
+      &:focus {
+        svg path {
+          fill: $red;
+          opacity: 1;
+        }
+      }
+    }
+
+    svg path {
+      fill: $text;
+      opacity: 0.5;
+    }
+  }
+}

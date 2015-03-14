@@ -1,0 +1,13 @@
+# Site settings
+title: Damon Bauer // Front End Developer // Nashville, TN
+email: hello@damonbauer.me
+description: Damon Bauer - Front End Developer from Nashville, TN. Writing primarily about CSS, Scss and JavaScript. Pretend woodworker. Mountain bike poseur.
+baseurl: ""
+url: http://damonbauer.me
+twitter_username: damon_bauer
+github_username:  damonbauer
+permalink: /:title/
+
+# Build settings
+markdown: kramdown
+exclude: ["grunt/", "node_modules", "Gruntfile.js", "README", "package.json"]
