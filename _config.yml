@@ -10,4 +10,4 @@ permalink: /:title/
 
 # Build settings
 markdown: kramdown
-exclude: ["grunt/", "node_modules", "Gruntfile.js", "README", "package.json"]
+exclude: ["grunt/", "node_modules", "Gruntfile.js", "README", "package.json", "Gemfile", "Gemfile.lock"]
