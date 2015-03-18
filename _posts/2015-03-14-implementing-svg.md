@@ -1,43 +1,60 @@
 ---
 layout: post
-title: "Implementing SVG"
+title: "Implementing an SVG Icon System"
 date:  2015-03-14
 categories: svg
 ---
-SVG has started to gain traction in the front end scene in the last few months<sup>1</sup>, thanks in part to the amazing work of some very smart people. For some time now, I've wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using icon fonts. So, I decided to explore the world of SVG and find a solution that is easy to implement & maintain, performant, accessible and cross-browser compatible.
+SVG has started to take off in the world of front end development in the last few months<sup><a href="#footnote-1" name="fn-1">1</a></sup>, thanks in part to the amazing work of some [very](https://css-tricks.com/mega-list-svg-information/) [smart](http://sarasoueidan.com/articles/index.html) [people](http://tutorials.jenkov.com/svg/svg-and-css.html). For some time now, I've wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I've been exploring the world of SVG and trying to find a solution that is easy to implement & maintain, performant, accessible and cross-browser compatible.
 <!--more-->
 
-I'm writing somewhat specifically with regards to using SVGs to create an icon set; by this I mean: multiple icons that serve as both decoration and as content images to be used in all areas of a website (global elements or otherwise).
+I'm writing with regards to using SVGs to create an icon system; more specifically, displaying multiple icons that serve as both decoration and as content images to be used in all areas of a website (global elements or otherwise).
 
-Here are all the ways I explored implementing SVGs, and a pros & cons list for each.
+Here are all the ways I explored implementing SVGs and a pros/cons list for each. This is by no means exhaustive; rather, it's  a high-level summary of the positives and negatives I personally encountered:
 
-* Sprite
+* CSS sprite [#](#sprite)
 * Background image
-  * path
-  * data uri, embed svg
-  * data uri
-* `<use>`
-* inline `<svg>`
-* `<img>`
-* Others
-  * icon packs (iconic, evil icons)
-
-Perhaps the most important thing I learned while investigating these various options is that there are trade offs and sacrifices that you will have to make. No one solution is perfect, nor is one solution the best in every scenario. You have to determine what's most important to you (e.g., performance, maintainability, browser support, level of interactivity), and decide which implementation you should pursue.
+  * path [#](#bg-path)
+  * data uri, embed svg [#](#bg-embed)
+  * data uri [#](#bg-data)
+* `<use>` [#](#use)
+* inline `<svg>` [#](#inline)
+* `<img>` [#](#img)
+* Icon Packs [#](#packs)
 
 <style type="text/css">
+  h3 {
+    color: #DD6A68;
+  }
+
   .pro-con-list {
-    display: flex;
+    padding-bottom: 2rem;
+    border-bottom: 1px dotted #585B5E;
   }
 
   .pro-con-list .col {
-    flex: 1;
-    width: 50%;
-    padding: 1rem;
+    clear: both;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
     text-align: left;
   }
+
+  @media screen and (min-width: 50em) {
+    .pro-con-list {
+      display: flex;
+    }
+
+    .pro-con-list .col {
+      flex: 1;
+      width: 50%;
+    }
+  }
+
+  .pro-con-list p,
+  .pro-con-list ul { margin-bottom: 0 }
 </style>
 
-<h3>Sprite</h3>
+<a name="sprite"></a>
+<h3>CSS sprite</h3>
 <section class="pro-con-list">
 <div class="col">
 {% markdown %}
@@ -52,34 +69,35 @@ Perhaps the most important thing I learned while investigating these various opt
 {% markdown %}
 **Cons**
 
-  * Have to duplicate icon & change fill color if you want interaction states (can't change attrs at all)
-  * Creates an abundance of selectors
-  * Complex build steps
-  * If resizing with background-size, background-position needs updated too.
+  * No control over interaction states (unless you duplicate & modify)
+  * Only maintainable with a build tool
+  * If resizing with background-size, background-position needs updated too
 {% endmarkdown %}
 </div>
 </section>
 
+<a name="bg-path"></a>
 <h3>Background Image (Path)</h3>
 <section class="pro-con-list">
 <div class="col">
 {% markdown %}
 **Pros**
 
+* Can be sized using background-size
 * Easy to add to markup (`<i class="icon icon--feed"></i>`)
-* Easily sized using background-size
 {% endmarkdown %}
 </div>
 <div class="col">
 {% markdown %}
 **Cons**
 
-* Multiple HTTP requests
-* Can't tweak (fill, stroke,etc)
+* Creates multiple HTTP requests
+* No control over interaction states
 {% endmarkdown %}
 </div>
 </section>
 
+<a name="bg-embed"></a>
 <h3>Background Image - Data Uri (Embed SVG)</h3>
 <section class="pro-con-list">
 <div class="col">
@@ -94,13 +112,13 @@ Perhaps the most important thing I learned while investigating these various opt
 {% markdown %}
 **Cons**
 
-* Requires selectors to have redundant code
-* IE
-* Can only change SVG attrs on the fly by duplicating selector (hover, active, etc)
+* Leads to larger CSS files because you can only change SVG attributes by duplicating selector & `svg`
+* IE doesn't have the best support (> IE9?)
 {% endmarkdown %}
 </div>
 </section>
 
+<a name="bg-data"></a>
 <h3>Background Image - Data Uri (Base 64)</h3>
 <section class="pro-con-list">
 <div class="col">
@@ -115,34 +133,37 @@ Perhaps the most important thing I learned while investigating these various opt
 {% markdown %}
 **Cons**
 
-* Bad for Performance
-* Can't tweak (fill, stroke,etc)
-* Illegible
+* [Bad for Performance](https://css-tricks.com/probably-dont-base64-svg/)
+* Leads to larger CSS files because you can only change SVG attributes by duplicating selector & `svg`
+* Creates illegible & unmaintainable CSS
 {% endmarkdown %}
 </div>
 </section>
 
-<h3>SVG "use"</h3>
+<a name="use"></a>
+<h3>SVG &lt;use&gt;</h3>
 <section class="pro-con-list">
 <div class="col">
 {% markdown %}
 **Pros**
 
-* All svg shapes into one central location
-* Easy to style
+* All `svg` shapes in one central location
+* Easy to style; you can access the different parts of the `svg` (e.g. path) and modify attributes (e.g. fill, stroke)
 {% endmarkdown %}
 </div>
 <div class="col">
 {% markdown %}
 **Cons**
 
-* Duplicated markup on every page (unless Ajax'ed, but suffers from cross browser inconsistencies, and JS for icons, CORS)
-* Added markup to display a single element
+* Requires more markup to display:<br>`<svg><use xlink:href="#icon--feed" /></svg>`
+* Duplicated `svg` block on every page (not great for performance)
+  * ([unless you Ajax](https://css-tricks.com/svg-use-external-source/), but that suffers from cross browser inconsistencies and requires JS for icons. Requires CORS to be set up properly if serving from a CDN)
 {% endmarkdown %}
 </div>
 </section>
 
-<h3>img</h3>
+<a name="img"></a>
+<h3>&lt;img&gt;</h3>
 <section class="pro-con-list">
 <div class="col">
 {% markdown %}
@@ -156,23 +177,33 @@ Perhaps the most important thing I learned while investigating these various opt
 {% markdown %}
 **Cons**
 
-* Each <img> adds an HTTP request
-* Can't be styled at all
+* Each `<img>` adds an HTTP request
+* Can't modify styles
 {% endmarkdown %}
 </div>
 </section>
 
+<a name="packs"></a>
+
+###Icon Packs (e.g. [Iconic](http://useiconic.com), [Evil Icons](http://evil-icons.io))
+"Off the shelf" icon packs are starting to become more popular, and for good reason. These authors have put lots of time and effort creating some wonderful products that are easy to use and are well supported in most browsers.
+
+If you do decide to use an icon pack, be sure to take a critical look at your site's performance. Most of the icon packs I came researched required JavaScript to create an Ajax request for every icon on a page. It was not worth the extra HTTP requests and a momentary flash of the icons loading. I personally do not like having to use JavaScript just to load icons.
+
+##The Truth of the Matter
+Perhaps the most important thing I learned while investigating these various options is that there are trade offs and sacrifices that you will have to make. No single solution is perfect, nor is one solution the best in every scenario. You have to determine what's most important to you (e.g., performance, maintainability, browser support, level of interactivity), and decide which implementation you should pursue.
+
 ##TL;DR
 
 * There is no one size fits all solution
-* I'd almost always stay away from base64 encoded SVGs
-* If you care most about ease of _implementation & maintainability_: **background image (path)** or **`<img src>`**
-* If you care most about _performance_: **sprite** or **background-image (embed)**
-* If you care most about _interaction_: **`<use>`** or **background-image (embed)**
+* I'd almost always stay away from base64 encoded SVGs in your CSS
+* If you care most about:
+  * ease of _implementation & maintainability_: choose **background image (path)** or **&lt;img&gt;**
+  * _performance_: choose **sprite** or **background-image (embed)**
+  * _interaction_: choose **&lt;use&gt;** or **background-image (embed)**
 
-##Wrap Up
-Hopefully that helps breakdown the pros & cons of the various SVG implementation methods available today. If I missed something or you have questions or comments, please send me a tweet or email me.
+In my quest to replace icon fonts, I went down the **sprite** path the furthest. The system I came up with was brittle, hard to work with and ultimately too complex to maintain long term. I ended up sticking with icon fonts for the time being.
 
----
-
-[1]: http://www.google.com/trends/explore#q=svg
+<br>
+<a name="footnote-1"></a>
+1. [Google Trends showing fall and rise of SVG searches](http://www.google.com/trends/explore#q=svg) [&#8617;](#fn-1)

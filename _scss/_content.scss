@@ -73,4 +73,12 @@ li code {
 
 .post ul {
   margin-left: 2rem;
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.post h2 {
+  margin: 2rem 0 .5rem;
 }
