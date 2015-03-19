@@ -71,14 +71,25 @@ li code {
   color: $blue;
 }
 
-.post ul {
+.post ul,
+.post ol {
   margin-left: 2rem;
+}
 
-  ul {
-    margin-bottom: 0;
-  }
+.post ul ul {
+  margin-bottom: 0;
 }
 
 .post h2 {
   margin: 2rem 0 .5rem;
+}
+
+abbr {
+  border-bottom: 1px dotted #585B5E;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px dotted #585B5E;
 }

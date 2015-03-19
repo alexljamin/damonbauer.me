@@ -4,7 +4,7 @@ title: "Implementing an SVG Icon System"
 date:  2015-03-14
 categories: svg
 ---
-SVG has started to take off in the world of front end development in the last few months<sup><a href="#footnote-1" name="fn-1">1</a></sup>, thanks in part to the amazing work of some [very](https://css-tricks.com/mega-list-svg-information/) [smart](http://sarasoueidan.com/articles/index.html) [people](http://tutorials.jenkov.com/svg/svg-and-css.html). For some time now, I've wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I've been exploring the world of SVG and trying to find a solution that is easy to implement & maintain, performant, accessible and cross-browser compatible.
+In the last few months, <abbr title="Scalable Vector Graphics">SVG</abbr> has started to once again gain traction in the world of front end development<sup><a href="#footnote-1" name="fn-1">1</a></sup>, thanks in part to the amazing work of some [very](https://css-tricks.com/mega-list-svg-information/) [smart](http://sarasoueidan.com/articles/index.html) [people](http://tutorials.jenkov.com/svg/svg-and-css.html). For some time now, I've wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I've been exploring the world of SVG and trying to find a solution that is easy to implement & maintain, light, and cross-browser compatible.
 <!--more-->
 
 I'm writing with regards to using SVGs to create an icon system; more specifically, displaying multiple icons that serve as both decoration and as content images to be used in all areas of a website (global elements or otherwise).
@@ -60,17 +60,17 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 {% markdown %}
 **Pros**
 
-  * Single HTTP Request
+  * Single HTTP request
   * Can be sized using background-size
-  * Easy to add to markup (`<i class="icon icon--feed"></i>`)
+  * Easy to add to markup<br>(`<i class="icon icon--feed"></i>`)
 {% endmarkdown %}
 </div>
 <div class="col">
 {% markdown %}
 **Cons**
 
-  * No control over interaction states (unless you duplicate & modify)
-  * Only maintainable with a build tool
+  * No control over interaction states (unless you duplicate & modify selectors)
+  * Only feasible way to add/edit icons is with a build tool
   * If resizing with background-size, background-position needs updated too
 {% endmarkdown %}
 </div>
@@ -84,14 +84,14 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 **Pros**
 
 * Can be sized using background-size
-* Easy to add to markup (`<i class="icon icon--feed"></i>`)
+* Easy to add to markup<br>(`<i class="icon icon--feed"></i>`)
 {% endmarkdown %}
 </div>
 <div class="col">
 {% markdown %}
 **Cons**
 
-* Creates multiple HTTP requests
+* Multiple HTTP requests
 * No control over interaction states
 {% endmarkdown %}
 </div>
@@ -105,7 +105,7 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 **Pros**
 
 * Reduced HTTP requests
-* Easy to add to markup (`<i class="icon icon--feed"></i>`)
+* Easy to add to markup<br>(`<i class="icon icon--feed"></i>`)
 {% endmarkdown %}
 </div>
 <div class="col">
@@ -156,8 +156,7 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 **Cons**
 
 * Requires more markup to display:<br>`<svg><use xlink:href="#icon--feed" /></svg>`
-* Duplicated `svg` block on every page (not great for performance)
-  * ([unless you Ajax](https://css-tricks.com/svg-use-external-source/), but that suffers from cross browser inconsistencies and requires JS for icons. Requires CORS to be set up properly if serving from a CDN)
+* Duplicated `svg` block on every page load, not the best in regards to&nbsp;performance<sup><a href="#footnote-2" name="fn-2">2</a></sup>
 {% endmarkdown %}
 </div>
 </section>
@@ -188,7 +187,7 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 ###Icon Packs (e.g. [Iconic](http://useiconic.com), [Evil Icons](http://evil-icons.io))
 "Off the shelf" icon packs are starting to become more popular, and for good reason. These authors have put lots of time and effort creating some wonderful products that are easy to use and are well supported in most browsers.
 
-If you do decide to use an icon pack, be sure to take a critical look at your site's performance. Most of the icon packs I came researched required JavaScript to create an Ajax request for every icon on a page. It was not worth the extra HTTP requests and a momentary flash of the icons loading. I personally do not like having to use JavaScript just to load icons.
+If you do decide to use an icon pack, be sure to take a critical look at your site's performance. Most of the icon packs I researched required JavaScript to create an Ajax request for every icon on a page. In my opinion, the benefit of easier development is not worth the extra HTTP requests and a momentary flash of the icons loading. I personally do not like having to use JavaScript just to load icons.
 
 ##The Truth of the Matter
 Perhaps the most important thing I learned while investigating these various options is that there are trade offs and sacrifices that you will have to make. No single solution is perfect, nor is one solution the best in every scenario. You have to determine what's most important to you (e.g., performance, maintainability, browser support, level of interactivity), and decide which implementation you should pursue.
@@ -198,12 +197,16 @@ Perhaps the most important thing I learned while investigating these various opt
 * There is no one size fits all solution
 * I'd almost always stay away from base64 encoded SVGs in your CSS
 * If you care most about:
-  * ease of _implementation & maintainability_: choose **background image (path)** or **&lt;img&gt;**
+  * _ease of implementation & maintainability_: choose **background image (path)** or **&lt;img&gt;**
   * _performance_: choose **sprite** or **background-image (embed)**
   * _interaction_: choose **&lt;use&gt;** or **background-image (embed)**
 
-In my quest to replace icon fonts, I went down the **sprite** path the furthest. The system I came up with was brittle, hard to work with and ultimately too complex to maintain long term. I ended up sticking with icon fonts for the time being.
+In my quest to replace icon fonts, I went followed down the **CSS sprite** path the furthest. The system I came up with was brittle, hard to work with and ultimately too complex to maintain long term. I ended up sticking with icon fonts for the time being.
 
-<br>
+<hr class="footnote-separator">
+
 <a name="footnote-1"></a>
+<a name="footnote-2"></a>
+
 1. [Google Trends showing fall and rise of SVG searches](http://www.google.com/trends/explore#q=svg) [&#8617;](#fn-1)
+2. Unless you [Ajax the block of SVG onto the page](https://css-tricks.com/svg-use-external-source/). However, doing so suffers from cross browser inconsistencies and requires JS for loading icons. Requires CORS to be set up properly if serving from a CDN. [&#8617;](#fn-2)
