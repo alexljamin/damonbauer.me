@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Damon Bauer - Front End Developer from Nashville, TN. Writing primarily about CSS, Scss and JavaScript. Pretend woodworker. Mountain bike poseur.">
+  <meta name="description" content="I realize I’m pretty late to the game, but Jekyll is pretty great. I’ve tried various blogging platforms &amp; tools in the past, but using Jekyll has made i...">
 
-  <title>Damon Bauer // Front End Developer // Nashville, TN</title>
+  <title>Adding a 'Pages' Directory to Jekyll</title>
 
-  <link rel="canonical" href="http://damonbauer.me/">
+  <link rel="canonical" href="http://damonbauer.me/jekyll-pages/">
   <style type="text/css">
     @font-face{font-family:'Inconsolata';src:url('/assets/fonts/Inconsolata-Regular-webfont.woff2') format('woff2'),url('/assets/fonts/Inconsolata-Regular-webfont.woff') format('woff'),url('/assets/fonts/Inconsolata-Regular-webfont.ttf') format('truetype');font-weight:400;font-style:normal;}@font-face{font-family:'Inconsolata Bold';src:url('/assets/fonts/Inconsolata-Bold-webfont.woff2') format('woff2'),url('/assets/fonts/Inconsolata-Bold-webfont.woff') format('woff'),url('/assets/fonts/Inconsolata-Bold-webfont.ttf') format('truetype');font-weight:700;font-style:normal;}body{font-family:"Inconsolata", monospace}b,strong,h1,h2,h3,header a{font-family:"Inconsolata Bold", monospace}*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll}body{font-size:18px;background:#373a4a;color:#c4c4c4}p,ul,ol{line-height:1.5;margin-bottom:1.5rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845}img{max-width:100%}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5rem 0 2.5rem;text-align:center}.Masthead a{display:inline-block;border-bottom:2px solid transparent;font-size:2.75rem;font-weight:bold;letter-spacing:5px}@media screen and (min-width: 50em){.Masthead a{font-size:3rem;}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{display:block;padding-top:.5rem;font-size:1rem;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px;}}#wrap{margin:0 auto;max-width:50rem;padding:0 1rem}@media screen and (min-width: 50em){#wrap{padding:0;}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3rem}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-2.5rem;left:50%;margin-left:-1rem;font-size:2rem;content:"\2026"}.post-header{display:block;margin-bottom:1.5rem}.post-link{position:relative;padding-right:1.75rem}.post-link:hover:after,.post-link:focus:after{position:absolute;right:0;top:50%;margin-top:-1rem;content:"\2192"}.post-meta{display:block;margin-top:.5rem;font-size:1rem}pre{padding:0.5rem;margin-bottom:0.5rem;font-size:0.8rem;color:#373a4a}p code,li code{padding:0.25rem;font-size:0.8rem;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2rem}.post ul ul{margin-bottom:0}.post h2{margin:2rem 0 .5rem}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}
   </style>
@@ -24,71 +24,54 @@
 
 
       <main role="main">
-        <ul class="post-list">
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/jekyll-pages/">Adding a 'Pages' Directory to Jekyll</a>
-        <span class="post-meta">March 28, 2015</span>
-      </h2>
-      <p>I realize I’m pretty late to the game, but <a href="http://jekyllrb.com">Jekyll</a> is pretty great. I’ve tried various blogging platforms &amp; tools in the past, but using Jekyll has made it easy and encouraging to keep writing.</p>
+        <div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Adding a 'Pages' Directory to Jekyll</h1>
+    <span class="post-meta">March 28, 2015</span>
+  </header>
 
+  <article class="post-content">
+    <p>I realize I’m pretty late to the game, but <a href="http://jekyllrb.com">Jekyll</a> is pretty great. I’ve tried various blogging platforms &amp; tools in the past, but using Jekyll has made it easy and encouraging to keep writing.</p>
 
-    </li>
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/implementing-svg/">Implementing an SVG Icon System</a>
-        <span class="post-meta">March 14, 2015</span>
-      </h2>
-      <p>In the last few months, <abbr title="Scalable Vector Graphics">SVG</abbr> has started to once again gain traction in the world of front end development<sup><a href="#footnote-1" name="fn-1">1</a></sup>, thanks in part to the amazing work of some <a href="https://css-tricks.com/mega-list-svg-information/">very</a> <a href="http://sarasoueidan.com/articles/index.html">smart</a> <a href="http://tutorials.jenkov.com/svg/svg-and-css.html">people</a>. For some time now, I’ve wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I’ve been exploring the world of SVG and trying to find a solution that is easy to implement &amp; maintain, light, and cross-browser compatible.
-<!--more--></p>
+<!--more-->
 
+<p>By default, Jekyll allows you to add pages instead of posts by simply <a href="http://jekyllrb.com/docs/pages/">adding folders</a> to the root directory. However, I’m not fond of littering the root directory with lots of extra folders. Instead, I’d prefer to follow the same folder paradigm, which would allow for putting static pages in a <code>_pages</code> directory. Setting this up is actually pretty simple.</p>
 
-    </li>
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/click-to-reveal-search-bar/">Click to Reveal Search Bar</a>
-        <span class="post-meta">February 20, 2015</span>
-      </h2>
-      <p>In the interest in of feature parity between desktop &amp; mobile experiences, I’ve recently been working on adding search to the mobile view of my employer’s website, <a href="http://daveramsey.com">daveramsey.com</a>. The following is an explanation of why and how I am going about adding an click-to-reveal search bar on small screens.
-<!--more--></p>
+<p>The first thing to do is add a folder called <code>_pages</code> to your site’s root folder (at the same level as <code>_posts</code>, <code>_layouts</code>, etc).</p>
 
+<h2 id="update-jekyll-config">Update Jekyll Config</h2>
+<p>The next step is to add your new <code>_pages</code> directory to the list of folders Jekyll will process when building. Modify your <code>_config.yml</code> to list a hash of “includes”:</p>
 
-    </li>
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/git-interactive-add/">Git Interactive Add</a>
-        <span class="post-meta">September 20, 2014</span>
-      </h2>
-      <p>There are numerous extra scripts that come with Git that can help you create more meaningful, specific commits to your repositories. One such script is “interactive” add, which I recently discovered while working on a project.</p>
+<p><code>
+include: ["_pages"]
+</code></p>
 
+<p>I follow the pattern of keeping <a href="http://mattgemmell.com/permalinks/">dates out of URLs</a>, and I think you should too. To keep your URL structure as clean as possible, you need to update the <code>permalinks</code> configuration as well. Place this change in <code>_config.yml</code> as well.</p>
 
-    </li>
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/scss-folder-structure/">Scss/Sass Folder Structure</a>
-        <span class="post-meta">March 21, 2014</span>
-      </h2>
-      <p>The following is how I set up my Sass folders for my projects. This is a jumping off point for new projects, so I am at liberty to add or remove Sass files as I see fit. By no means is it an end-all solution, but I find it works well to get going quickly. I feel like there is definitely room for improvement, so please feel free to chime in with suggestions!</p>
+<p><code>
+permalink: /:title/
+</code></p>
 
+<p>This will make your site’s URLs succinct and easy to read; in my opinion, there isn’t a reason not to make this simple change.</p>
 
-    </li>
-  
-    <li>
-      <h2 class="post-header">
-        <a class="post-link" href="/incrementing-color-scss-mixin/">Incrementing color SCSS mixin</a>
-        <span class="post-meta">January 08, 2014</span>
-      </h2>
-      <p>Recently, I built a small little <a href="http://codepen.io/motoxer4533/full/FcqEs">responsive navigation thing</a> for a challenge on <a href="http://teamtreehouse.com">Treehouse</a>. I wanted links that had “incremented” or “stepped” colors from lighter to darker. Rather than figure out each color and place it one by one, I opted to build a small SCSS mixin to do the work for me.</p>
+<h2 id="build-a-page">Build a Page</h2>
+<p>Now you’re ready to make some pages. In your new <code>_pages</code> directory, create another folder, say <code>about</code>; create an <code>index.html</code> or <code>index.md</code> inside the folder.</p>
 
+<p>In addition to any normal YAML front matter your pages/posts usually needs, you’ll need to add the following:</p>
 
-    </li>
-  
-</ul>
+<p><code>
+permalink: "/about/"
+</code></p>
+
+<p>Notice the forward slashes before and after the name of the page. They are mandatory in both spots. The permalink should match the name of the folder that this file lives in.</p>
+
+<h2 id="jekyll-build-or-serve">Jekyll Build (or Serve)</h2>
+<p>The last step is to build or serve your site. You should be familiar with this task, but if you aren’t, open your command line and run <code>jekyll build</code> or <code>jekyll serve</code>. You’ll probably want to attach the <code>--watch</code> flag to either command to automatically process new changes to pages or posts.</p>
+
+<p>That’s all there is to it! Pretty easy, right? With just a couple of modifications to your <code>_config.yml</code>, you can better organize your site’s pages and folder structure.</p>
+
+  </article>
+</div>
 
       </main>
 
