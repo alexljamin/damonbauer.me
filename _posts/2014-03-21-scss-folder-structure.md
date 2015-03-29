@@ -1,7 +1,9 @@
 ---
-title: Scss/Sass Folder Structure
 layout: post
-excerpt_separator: <!--more-->
+title: Scss/Sass Folder Structure
+date:  2014-03-21
+categories: scss
+description: "Explaining the how and why behind my Sass folder structure."
 ---
 
 The following is how I set up my Sass folders for my projects. This is a jumping off point for new projects, so I am at liberty to add or remove Sass files as I see fit. By no means is it an end-all solution, but I find it works well to get going quickly. I feel like there is definitely room for improvement, so please feel free to chime in with suggestions!

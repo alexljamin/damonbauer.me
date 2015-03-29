@@ -3,6 +3,7 @@ layout: post
 title: "Git Interactive Add"
 date:  2014-09-20
 categories: git
+description: "Exploring the Git interactive command"
 ---
 There are numerous extra scripts that come with Git that can help you create more meaningful, specific commits to your repositories. One such script is “interactive” add, which I recently discovered while working on a project.
 

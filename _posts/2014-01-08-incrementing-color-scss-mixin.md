@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Incrementing color SCSS mixin"
 date:  2014-01-08
-categories: scss responsive
+title: Incrementing color SCSS mixin"
+categories: scss
+description: "An Scss mixin that increments a color and applies those colors to a navigation list."
 ---
 Recently, I built a small little [responsive navigation thing](http://codepen.io/motoxer4533/full/FcqEs) for a challenge on [Treehouse](http://teamtreehouse.com). I wanted links that had “incremented” or “stepped” colors from lighter to darker. Rather than figure out each color and place it one by one, I opted to build a small SCSS mixin to do the work for me.
 

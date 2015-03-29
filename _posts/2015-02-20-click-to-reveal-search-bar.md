@@ -3,6 +3,7 @@ layout: post
 title: "Click to Reveal Search Bar"
 date:  2015-02-20
 categories: scss
+description: "Building a CSS only click to reveal search bar."
 ---
 In the interest in of feature parity between desktop & mobile experiences, I’ve recently been working on adding search to the mobile view of my employer’s website, [daveramsey.com](http://daveramsey.com). The following is an explanation of why and how I am going about adding an click-to-reveal search bar on small screens.
 <!--more-->

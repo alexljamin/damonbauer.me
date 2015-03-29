@@ -3,6 +3,7 @@ layout: post
 title: "Implementing an SVG Icon System"
 date:  2015-03-14
 categories: svg
+description: "Various ways, with pros and cons for each, of implementing an SVG icon system."
 ---
 In the last few months, <abbr title="Scalable Vector Graphics">SVG</abbr> has started to once again gain traction in the world of front end development<sup><a href="#footnote-1" name="fn-1">1</a></sup>, thanks in part to the amazing work of some [very](https://css-tricks.com/mega-list-svg-information/) [smart](http://sarasoueidan.com/articles/index.html) [people](http://tutorials.jenkov.com/svg/svg-and-css.html). For some time now, I've wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I've been exploring the world of SVG and trying to find a solution that is easy to implement & maintain, light, and cross-browser compatible.
 <!--more-->

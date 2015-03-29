@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="I realize I’m pretty late to the game, but Jekyll is pretty great. I’ve tried various blogging platforms &amp; tools in the past, but using Jekyll has made i...">
+  <meta name="description" content="Move static pages into a central folder for better folder structure & organization using Jekyll.">
 
-  <title>Adding a 'Pages' Directory to Jekyll</title>
+  <title>Organizing Jekyll Pages | Damon Bauer</title>
 
-  <link rel="canonical" href="http://damonbauer.me/jekyll-pages/">
+  <link rel="canonical" href="http://damonbauer.me/organizing-jekyll-pages/">
   <style type="text/css">
     @font-face{font-family:'Inconsolata';src:url('/assets/fonts/Inconsolata-Regular-webfont.woff2') format('woff2'),url('/assets/fonts/Inconsolata-Regular-webfont.woff') format('woff'),url('/assets/fonts/Inconsolata-Regular-webfont.ttf') format('truetype');font-weight:400;font-style:normal;}@font-face{font-family:'Inconsolata Bold';src:url('/assets/fonts/Inconsolata-Bold-webfont.woff2') format('woff2'),url('/assets/fonts/Inconsolata-Bold-webfont.woff') format('woff'),url('/assets/fonts/Inconsolata-Bold-webfont.ttf') format('truetype');font-weight:700;font-style:normal;}body{font-family:"Inconsolata", monospace}b,strong,h1,h2,h3,header a{font-family:"Inconsolata Bold", monospace}*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll}body{font-size:18px;background:#373a4a;color:#c4c4c4}p,ul,ol{line-height:1.5;margin-bottom:1.5rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845}img{max-width:100%}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5rem 0 2.5rem;text-align:center}.Masthead a{display:inline-block;border-bottom:2px solid transparent;font-size:2.75rem;font-weight:bold;letter-spacing:5px}@media screen and (min-width: 50em){.Masthead a{font-size:3rem;}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{display:block;padding-top:.5rem;font-size:1rem;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px;}}#wrap{margin:0 auto;max-width:50rem;padding:0 1rem}@media screen and (min-width: 50em){#wrap{padding:0;}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3rem}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-2.5rem;left:50%;margin-left:-1rem;font-size:2rem;content:"\2026"}.post-header{display:block;margin-bottom:1.5rem}.post-link{position:relative;padding-right:1.75rem}.post-link:hover:after,.post-link:focus:after{position:absolute;right:0;top:50%;margin-top:-1rem;content:"\2192"}.post-meta{display:block;margin-top:.5rem;font-size:1rem}pre{padding:0.5rem;margin-bottom:0.5rem;font-size:0.8rem;color:#373a4a}p code,li code{padding:0.25rem;font-size:0.8rem;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2rem}.post ul ul{margin-bottom:0}.post h2{margin:2rem 0 .5rem}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}
   </style>
@@ -26,16 +26,45 @@
       <main role="main">
         <div class="post">
   <header class="post-header">
-    <h1 class="post-title">Adding a 'Pages' Directory to Jekyll</h1>
+    <h1 class="post-title">Organizing Jekyll Pages</h1>
     <span class="post-meta">March 28, 2015</span>
   </header>
 
   <article class="post-content">
-    <p>I realize I’m pretty late to the game, but <a href="http://jekyllrb.com">Jekyll</a> is pretty great. I’ve tried various blogging platforms &amp; tools in the past, but using Jekyll has made it easy and encouraging to keep writing.</p>
+    <p>I realize I’m pretty late to the game, but <a href="http://jekyllrb.com">Jekyll</a> is great. I’ve tried various blogging platforms &amp; tools in the past, but since making the switch to Jekyll a few months ago, I’ve been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it’s set up to handle static pages. No more!</p>
 
 <!--more-->
 
 <p>By default, Jekyll allows you to add pages instead of posts by simply <a href="http://jekyllrb.com/docs/pages/">adding folders</a> to the root directory. However, I’m not fond of littering the root directory with lots of extra folders. Instead, I’d prefer to follow the same folder paradigm, which would allow for putting static pages in a <code>_pages</code> directory. Setting this up is actually pretty simple.</p>
+
+<style type="text/css">
+@media screen and (min-width: 50em) {
+  .col-wrap {
+    display: flex;
+  }
+
+  .col-wrap .col {
+    flex: 1;
+    width: 50%;
+  }
+}
+</style>
+
+<section class="col-wrap">
+<div class="col">
+
+<p>We’ll go from this:<br />
+<img src="/assets/images/jekyll-pages/old.png" alt="The old folder structure" /></p>
+
+</div>
+
+<div class="col">
+
+<p>to this:<br />
+<img src="/assets/images/jekyll-pages/new.png" alt="The new folder structure" /></p>
+
+</div>
+</section>
 
 <p>The first thing to do is add a folder called <code>_pages</code> to your site’s root folder (at the same level as <code>_posts</code>, <code>_layouts</code>, etc).</p>
 

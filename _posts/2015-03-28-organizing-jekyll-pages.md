@@ -1,15 +1,45 @@
 ---
 layout: post
-title: "Adding a 'Pages' Directory to Jekyll"
+title: "Organizing Jekyll Pages"
 date:  2015-03-28
 categories: jekyll
+description: "Move static pages into a central folder for better folder structure & organization using Jekyll."
 ---
 
-I realize I'm pretty late to the game, but [Jekyll](http://jekyllrb.com) is pretty great. I've tried various blogging platforms & tools in the past, but using Jekyll has made it easy and encouraging to keep writing.
+I realize I'm pretty late to the game, but [Jekyll](http://jekyllrb.com) is great. I've tried various blogging platforms & tools in the past, but since making the switch to Jekyll a few months ago, I've been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it's set up to handle static pages. No more!
 
 <!--more-->
 
 By default, Jekyll allows you to add pages instead of posts by simply [adding folders](http://jekyllrb.com/docs/pages/) to the root directory. However, I'm not fond of littering the root directory with lots of extra folders. Instead, I'd prefer to follow the same folder paradigm, which would allow for putting static pages in a `_pages` directory. Setting this up is actually pretty simple.
+
+<style type="text/css">
+@media screen and (min-width: 50em) {
+  .col-wrap {
+    display: flex;
+  }
+
+  .col-wrap .col {
+    flex: 1;
+    width: 50%;
+  }
+}
+</style>
+
+<section class="col-wrap">
+<div class="col">
+{% markdown %}
+We'll go from this:<br>
+![The old folder structure](/assets/images/jekyll-pages/old.png)
+{% endmarkdown %}
+</div>
+
+<div class="col">
+{% markdown %}
+to this:<br>
+![The new folder structure](/assets/images/jekyll-pages/new.png)
+{% endmarkdown %}
+</div>
+</section>
 
 The first thing to do is add a folder called `_pages` to your site's root folder (at the same level as `_posts`, `_layouts`, etc).
 
