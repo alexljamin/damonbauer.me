@@ -48,9 +48,22 @@
     </ul>
   </li>
   <li><code>&lt;use&gt;</code> <a href="#use">#</a></li>
-  <li>inline <code>&lt;svg&gt;</code> <a href="#inline">#</a></li>
   <li><code>&lt;img&gt;</code> <a href="#img">#</a></li>
   <li>Icon Packs <a href="#packs">#</a></li>
+</ul>
+
+<h2 id="tldr">TL;DR</h2>
+
+<ul>
+  <li>There is no one size fits all solution</li>
+  <li>I’d almost always stay away from base64 encoded SVGs in your CSS</li>
+  <li>If you care most about:
+    <ul>
+      <li><em>ease of implementation &amp; maintainability</em>: choose <strong>background image (path)</strong> or <strong>&lt;img&gt;</strong></li>
+      <li><em>performance</em>: choose <strong>sprite</strong> or <strong>background-image (embed)</strong></li>
+      <li><em>interaction</em>: choose <strong>&lt;use&gt;</strong> or <strong>background-image (embed)</strong></li>
+    </ul>
+  </li>
 </ul>
 
 <style type="text/css">
@@ -59,8 +72,7 @@
   }
 
   .pro-con-list {
-    padding-bottom: 2rem;
-    border-bottom: 1px dotted #585B5E;
+    padding-bottom: 1rem;
   }
 
   .pro-con-list .col {
@@ -78,6 +90,14 @@
     .pro-con-list .col {
       flex: 1;
       width: 50%;
+    }
+
+    .codepen {
+      display: block;
+      clear: both;
+      width: 100%;
+      padding-bottom: 2rem;
+      border-bottom: 1px dotted #585B5E;
     }
   }
 
@@ -104,13 +124,18 @@
 <p><strong>Cons</strong></p>
 
 <ul>
-  <li>No control over interaction states (unless you duplicate &amp; modify selectors)</li>
-  <li>Only feasible way to add/edit icons is with a build tool</li>
-  <li>If resizing with background-size, background-position needs updated too</li>
+  <li>No control over interaction states (unless you duplicate the icon, change the attributes &amp; add more selectors)</li>
+  <li>Only feasible way to add/edit icons is with a build tool to generate <code>background-position</code> values</li>
+  <li>If resizing with <code>background-size</code>, <code>background-position</code> needs updated too</li>
 </ul>
 
 </div>
 </section>
+
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="YPMJLy" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/YPMJLy/">Implementing SVG - CSS Sprite</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 <p><a name="bg-path"></a></p>
 <h3>Background Image (Path)</h3>
@@ -137,6 +162,11 @@
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="azxREM" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/azxREM/">Implementing SVG - Background Image</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <p><a name="bg-embed"></a></p>
 <h3>Background Image - Data Uri (Embed SVG)</h3>
 <section class="pro-con-list">
@@ -162,6 +192,11 @@
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="gbyBwP" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/gbyBwP/">Implementing SVG - Embed SVG</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <p><a name="bg-data"></a></p>
 <h3>Background Image - Data Uri (Base 64)</h3>
 <section class="pro-con-list">
@@ -171,7 +206,7 @@
 
 <ul>
   <li>Reduced HTTP requests</li>
-  <li>Simple to add to existing selectors or to markup (“<i class="icon icon--feed"></i>)</li>
+  <li>Simple to add to existing selectors or to markup (<code>&lt;i class="icon icon--feed"&gt;&lt;/i&gt;</code>)</li>
 </ul>
 
 </div>
@@ -187,6 +222,11 @@
 
 </div>
 </section>
+
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="wBZYGz" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/wBZYGz/">Implementing SVG - Base 64 SVG</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 <p><a name="use"></a></p>
 <h3>SVG &lt;use&gt;</h3>
@@ -213,6 +253,11 @@
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="rabqBJ" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/rabqBJ/">Implementing SVG - SVG Use</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <p><a name="img"></a></p>
 <h3>&lt;img&gt;</h3>
 <section class="pro-con-list">
@@ -238,6 +283,11 @@
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="pvBLbG" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/pvBLbG/">Implementing SVG - Image Tag</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <p><a name="packs"></a></p>
 
 <h3 id="icon-packs-eg-iconichttpuseiconiccom-evil-iconshttpevil-iconsio">Icon Packs (e.g. <a href="http://useiconic.com">Iconic</a>, <a href="http://evil-icons.io">Evil Icons</a>)</h3>
@@ -247,20 +297,6 @@
 
 <h2 id="the-truth-of-the-matter">The Truth of the Matter</h2>
 <p>Perhaps the most important thing I learned while investigating these various options is that there are trade offs and sacrifices that you will have to make. No single solution is perfect, nor is one solution the best in every scenario. You have to determine what’s most important to you (e.g., performance, maintainability, browser support, level of interactivity), and decide which implementation you should pursue.</p>
-
-<h2 id="tldr">TL;DR</h2>
-
-<ul>
-  <li>There is no one size fits all solution</li>
-  <li>I’d almost always stay away from base64 encoded SVGs in your CSS</li>
-  <li>If you care most about:
-    <ul>
-      <li><em>ease of implementation &amp; maintainability</em>: choose <strong>background image (path)</strong> or <strong>&lt;img&gt;</strong></li>
-      <li><em>performance</em>: choose <strong>sprite</strong> or <strong>background-image (embed)</strong></li>
-      <li><em>interaction</em>: choose <strong>&lt;use&gt;</strong> or <strong>background-image (embed)</strong></li>
-    </ul>
-  </li>
-</ul>
 
 <p>In my quest to replace icon fonts, I went followed down the <strong>CSS sprite</strong> path the furthest. The system I came up with was brittle, hard to work with and ultimately too complex to maintain long term. I ended up sticking with icon fonts for the time being.</p>
 

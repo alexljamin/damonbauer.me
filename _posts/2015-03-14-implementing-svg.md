@@ -18,9 +18,17 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
   * data uri, embed svg [#](#bg-embed)
   * data uri [#](#bg-data)
 * `<use>` [#](#use)
-* inline `<svg>` [#](#inline)
 * `<img>` [#](#img)
 * Icon Packs [#](#packs)
+
+##TL;DR
+
+* There is no one size fits all solution
+* I'd almost always stay away from base64 encoded SVGs in your CSS
+* If you care most about:
+  * _ease of implementation & maintainability_: choose **background image (path)** or **&lt;img&gt;**
+  * _performance_: choose **sprite** or **background-image (embed)**
+  * _interaction_: choose **&lt;use&gt;** or **background-image (embed)**
 
 <style type="text/css">
   h3 {
@@ -28,8 +36,7 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
   }
 
   .pro-con-list {
-    padding-bottom: 2rem;
-    border-bottom: 1px dotted #585B5E;
+    padding-bottom: 1rem;
   }
 
   .pro-con-list .col {
@@ -47,6 +54,14 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
     .pro-con-list .col {
       flex: 1;
       width: 50%;
+    }
+
+    .codepen {
+      display: block;
+      clear: both;
+      width: 100%;
+      padding-bottom: 2rem;
+      border-bottom: 1px dotted #585B5E;
     }
   }
 
@@ -70,12 +85,17 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 {% markdown %}
 **Cons**
 
-  * No control over interaction states (unless you duplicate & modify selectors)
-  * Only feasible way to add/edit icons is with a build tool
-  * If resizing with background-size, background-position needs updated too
+  * No control over interaction states (unless you duplicate the icon, change the attributes & add more selectors)
+  * Only feasible way to add/edit icons is with a build tool to generate `background-position` values
+  * If resizing with `background-size`, `background-position` needs updated too
 {% endmarkdown %}
 </div>
 </section>
+
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="YPMJLy" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/YPMJLy/'>Implementing SVG - CSS Sprite</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 <a name="bg-path"></a>
 <h3>Background Image (Path)</h3>
@@ -98,6 +118,12 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="azxREM" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/azxREM/'>Implementing SVG - Background Image</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+
 <a name="bg-embed"></a>
 <h3>Background Image - Data Uri (Embed SVG)</h3>
 <section class="pro-con-list">
@@ -119,6 +145,11 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="gbyBwP" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/gbyBwP/'>Implementing SVG - Embed SVG</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <a name="bg-data"></a>
 <h3>Background Image - Data Uri (Base 64)</h3>
 <section class="pro-con-list">
@@ -127,7 +158,7 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 **Pros**
 
 * Reduced HTTP requests
-* Simple to add to existing selectors or to markup ("<i class="icon icon--feed"></i>)
+* Simple to add to existing selectors or to markup (`<i class="icon icon--feed"></i>`)
 {% endmarkdown %}
 </div>
 <div class="col">
@@ -140,6 +171,11 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 {% endmarkdown %}
 </div>
 </section>
+
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="wBZYGz" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/wBZYGz/'>Implementing SVG - Base 64 SVG</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 <a name="use"></a>
 <h3>SVG &lt;use&gt;</h3>
@@ -162,6 +198,11 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="rabqBJ" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/rabqBJ/'>Implementing SVG - SVG Use</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <a name="img"></a>
 <h3>&lt;img&gt;</h3>
 <section class="pro-con-list">
@@ -183,6 +224,11 @@ Here are all the ways I explored implementing SVGs and a pros/cons list for each
 </div>
 </section>
 
+<div class="codepen">
+  <p data-height="200" data-theme-id="12496" data-slug-hash="pvBLbG" data-default-tab="result" data-user="damonbauer" class='codepen'>See the Pen <a href='http://codepen.io/damonbauer/pen/pvBLbG/'>Implementing SVG - Image Tag</a> by Damon Bauer (<a href='http://codepen.io/damonbauer'>@damonbauer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
 <a name="packs"></a>
 
 ###Icon Packs (e.g. [Iconic](http://useiconic.com), [Evil Icons](http://evil-icons.io))
@@ -192,15 +238,6 @@ If you do decide to use an icon pack, be sure to take a critical look at your si
 
 ##The Truth of the Matter
 Perhaps the most important thing I learned while investigating these various options is that there are trade offs and sacrifices that you will have to make. No single solution is perfect, nor is one solution the best in every scenario. You have to determine what's most important to you (e.g., performance, maintainability, browser support, level of interactivity), and decide which implementation you should pursue.
-
-##TL;DR
-
-* There is no one size fits all solution
-* I'd almost always stay away from base64 encoded SVGs in your CSS
-* If you care most about:
-  * _ease of implementation & maintainability_: choose **background image (path)** or **&lt;img&gt;**
-  * _performance_: choose **sprite** or **background-image (embed)**
-  * _interaction_: choose **&lt;use&gt;** or **background-image (embed)**
 
 In my quest to replace icon fonts, I went followed down the **CSS sprite** path the furthest. The system I came up with was brittle, hard to work with and ultimately too complex to maintain long term. I ended up sticking with icon fonts for the time being.
 
