@@ -1,7 +1,7 @@
 ---
 layout: post
 date:  2014-01-08
-title: Incrementing color SCSS mixin"
+title: Incrementing color SCSS mixin
 categories: scss
 description: "An Scss mixin that increments a color and applies those colors to a navigation list."
 ---
