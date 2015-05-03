@@ -41,6 +41,16 @@ img {
   max-width: 100%;
 }
 
+blockquote {
+  margin-bottom: 1.5em;
+  padding:  0.3125em 0.625em;
+  font-style: italic;
+  background: $text;
+  color: $blue;
+
+  p { margin: 0 }
+}
+
 ::-moz-selection {
   background-color: rgba($red, 0.8);
   color: $text;
