@@ -25,6 +25,8 @@ By connecting any number of devices & browsers a BrowserSync created URL can:
 
 Having the ability to perform the actions listed above has helped me become a better tester of my own work before sending it to my QA team. I've been able to test faster, more consistently and more accurately.
 
+<iframe width="853" height="480" src="https://www.youtube.com/embed/W02aj4ZYUro?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 ##A Basic Implementation of BrowserSync
 It's incredibly simple to get a basic BrowserSync setup running, assuming you have NPM installed already. If you don't, [do that now](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
 
