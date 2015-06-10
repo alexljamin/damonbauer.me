@@ -12,5 +12,7 @@
 
       {% include footer.html %}
     </div>
+
+    <script>{% include fontfaceobserver.js %}!function(e){if(!(e.document.documentElement.className.indexOf("fonts-loaded")>-1)){var n=new e.FontFaceObserver("Inconsolata",{weight:400}),t=new e.FontFaceObserver("Inconsolata",{weight:700});e.Promise.all([n.check(),t.check()]).then(function(){e.document.documentElement.className+=" fonts-loaded"})}}(this);</script>
   </body>
 </html>

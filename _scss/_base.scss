@@ -9,10 +9,14 @@ html {
 }
 
 body {
-  @extend %Inconsolata;
+  font-family: monospace;
   font-size: 18px;
   background: $blue;
   color: $text;
+
+  .fonts-loaded & {
+    @extend %Inconsolata;
+  }
 }
 
 p, ul, ol {
@@ -34,7 +38,7 @@ a {
 b, strong,
 h1, h2, h3,
 header a {
-  @extend %Inconsolata-Bold;
+  font-weight: 700;
 }
 
 img {

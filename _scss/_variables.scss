@@ -4,17 +4,15 @@ $text: #c4c4c4;
 
 @font-face {
   font-family: 'Inconsolata';
-  src: url('/assets/fonts/Inconsolata-Regular-webfont.woff2') format('woff2'),
-       url('/assets/fonts/Inconsolata-Regular-webfont.woff') format('woff'),
+  src: url('/assets/fonts/Inconsolata-Regular-webfont.woff') format('woff'),
        url('/assets/fonts/Inconsolata-Regular-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inconsolata Bold';
-  src: url('/assets/fonts/Inconsolata-Bold-webfont.woff2') format('woff2'),
-       url('/assets/fonts/Inconsolata-Bold-webfont.woff') format('woff'),
+  font-family: 'Inconsolata';
+  src: url('/assets/fonts/Inconsolata-Bold-webfont.woff') format('woff'),
        url('/assets/fonts/Inconsolata-Bold-webfont.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -22,8 +20,4 @@ $text: #c4c4c4;
 
 %Inconsolata {
   font-family: "Inconsolata", monospace;
-}
-
-%Inconsolata-Bold {
-  font-family: "Inconsolata Bold", monospace;
 }
