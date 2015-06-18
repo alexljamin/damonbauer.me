@@ -71,3 +71,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-markdown-block
+
+BUNDLED WITH
+   1.10.2
