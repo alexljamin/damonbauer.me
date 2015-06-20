@@ -63,12 +63,9 @@ gulp.task('watch', function () {
   gulp.watch(['index.html', '_layouts/*', '_posts/*', '_drafts/*'], ['jekyll-rebuild']);
 });
 
-gulp.task('deploy', ['sass'], function() {
-  cp.spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit' })
-  .on('close', done);
-
-  gulp.src('./_site/**/*')
-  .pipe(ghPages());
+gulp.task('deploy', ['sass'], function( done ) {
+  cp.spawn(jekyll, ['build'], {stdio: 'inherit'}).on('close', done);
+  gulp.src('./_site/**/*').pipe(ghPages());
 });
 
 /**
