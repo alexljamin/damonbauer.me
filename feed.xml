@@ -1,27 +1,132 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
-		<title>{{ site.name | xml_escape }}</title>
-		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-		{% for post in site.posts limit:10 %}
+		<title></title>
+		<description>Damon Bauer - Front End Developer from Nashville, TN. Writing primarily about CSS, Scss and JavaScript. Pretend woodworker. Mountain bike poseur.</description>
+		<link>http://damonbauer.me</link>
+		<atom:link href="http://damonbauer.me/feed.xml" rel="self" type="application/rss+xml" />
+		
 			<item>
-				<title>{{ post.title | xml_escape }}</title>
-				{% if post.author.name %}
-					<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
-				{% endif %}
-				{% if post.excerpt %}
-					<description>{{ post.excerpt | xml_escape }}</description>
-				{% else %}
-					<description>{{ post.content | xml_escape }}</description>
-				{% endif %}
-				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+				<title>Chrome Filmstrip &amp; Improving Page Speed</title>
+				
+				
+					<description>&lt;p&gt;You may have heard of the wonderful site, &lt;a href=&quot;http://webpagetest.org&quot;&gt;WebpageTest&lt;/a&gt;, when researching ways to improve your site performance. One of the most useful features (in my opinion) is the Filmstrip; it shows you incremental screenshots of the browser rendering your site, so you can see how quickly users are able to start consuming content. As of the past couple of months, you can enable similar functionality in Chrome!
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 19 Jun 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/chrome-filmstrip/</link>
+				<guid isPermaLink="true">http://damonbauer.me/chrome-filmstrip/</guid>
 			</item>
-		{% endfor %}
+		
+			<item>
+				<title>What is BrowserSync and How Do You Use it?</title>
+				
+				
+					<description>&lt;p&gt;If you’ve not used &lt;a href=&quot;http://browsersync.io&quot;&gt;BrowserSync&lt;/a&gt; in your daily workflow, you’re missing out. It’s become an indispensible tool for me in the past two years by improving efficiency and reducing cross browser inconsistencies. In this post, I’ll introduce BrowserSync and explore a few use cases that I use on a regular basis.
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 02 May 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/browsersync/</link>
+				<guid isPermaLink="true">http://damonbauer.me/browsersync/</guid>
+			</item>
+		
+			<item>
+				<title>Is There a &amp;ldquo;Better&amp;rdquo; Text Decoration?</title>
+				
+				
+					<description>&lt;p&gt;Are you looking to change the thickness, color, opacity or position of &lt;code&gt;text-decoration&lt;/code&gt;? While the following technique isn’t &lt;em&gt;actually&lt;/em&gt; using this property, I’m going to demonstrate a way to fake some neat visual changes that simulate this property and take it a step further.
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 17 Apr 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/better-text-decoration/</link>
+				<guid isPermaLink="true">http://damonbauer.me/better-text-decoration/</guid>
+			</item>
+		
+			<item>
+				<title>Organizing Jekyll Pages</title>
+				
+				
+					<description>&lt;p&gt;I realize I’m pretty late to the game, but &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is great. I’ve tried various blogging platforms &amp;amp; tools in the past, but since making the switch to Jekyll a few months ago, I’ve been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it’s set up to handle static pages. No more!&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 28 Mar 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/organizing-jekyll-pages/</link>
+				<guid isPermaLink="true">http://damonbauer.me/organizing-jekyll-pages/</guid>
+			</item>
+		
+			<item>
+				<title>Implementing an SVG Icon System</title>
+				
+				
+					<description>&lt;p&gt;In the last few months, &lt;abbr title=&quot;Scalable Vector Graphics&quot;&gt;SVG&lt;/abbr&gt; has started to once again gain traction in the world of front end development&lt;sup&gt;&lt;a href=&quot;#footnote-1&quot; name=&quot;fn-1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, thanks in part to the amazing work of some &lt;a href=&quot;https://css-tricks.com/mega-list-svg-information/&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;http://sarasoueidan.com/articles/index.html&quot;&gt;smart&lt;/a&gt; &lt;a href=&quot;http://tutorials.jenkov.com/svg/svg-and-css.html&quot;&gt;people&lt;/a&gt;. For some time now, I’ve wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I’ve been exploring the world of SVG and trying to find a solution that is easy to implement &amp;amp; maintain, light, and cross-browser compatible.
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 14 Mar 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/implementing-svg/</link>
+				<guid isPermaLink="true">http://damonbauer.me/implementing-svg/</guid>
+			</item>
+		
+			<item>
+				<title>Click to Reveal Search Bar</title>
+				
+				
+					<description>&lt;p&gt;In the interest in of feature parity between desktop &amp;amp; mobile experiences, I’ve recently been working on adding search to the mobile view of my employer’s website, &lt;a href=&quot;http://daveramsey.com&quot;&gt;daveramsey.com&lt;/a&gt;. The following is an explanation of why and how I am going about adding an click-to-reveal search bar on small screens.
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 20 Feb 2015 00:00:00 -0600</pubDate>
+				<link>http://damonbauer.me/click-to-reveal-search-bar/</link>
+				<guid isPermaLink="true">http://damonbauer.me/click-to-reveal-search-bar/</guid>
+			</item>
+		
+			<item>
+				<title>Git Interactive Add</title>
+				
+				
+					<description>&lt;p&gt;There are numerous extra scripts that come with Git that can help you create more meaningful, specific commits to your repositories. One such script is “interactive” add, which I recently discovered while working on a project.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 20 Sep 2014 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/git-interactive-add/</link>
+				<guid isPermaLink="true">http://damonbauer.me/git-interactive-add/</guid>
+			</item>
+		
+			<item>
+				<title>Scss/Sass Folder Structure</title>
+				
+				
+					<description>&lt;p&gt;The following is how I set up my Sass folders for my projects. This is a jumping off point for new projects, so I am at liberty to add or remove Sass files as I see fit. By no means is it an end-all solution, but I find it works well to get going quickly. I feel like there is definitely room for improvement, so please feel free to chime in with suggestions!&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 21 Mar 2014 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/scss-folder-structure/</link>
+				<guid isPermaLink="true">http://damonbauer.me/scss-folder-structure/</guid>
+			</item>
+		
+			<item>
+				<title>Incrementing color SCSS mixin</title>
+				
+				
+					<description>&lt;p&gt;Recently, I built a small little &lt;a href=&quot;http://codepen.io/motoxer4533/full/FcqEs&quot;&gt;responsive navigation thing&lt;/a&gt; for a challenge on &lt;a href=&quot;http://teamtreehouse.com&quot;&gt;Treehouse&lt;/a&gt;. I wanted links that had “incremented” or “stepped” colors from lighter to darker. Rather than figure out each color and place it one by one, I opted to build a small SCSS mixin to do the work for me.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 08 Jan 2014 00:00:00 -0600</pubDate>
+				<link>http://damonbauer.me/incrementing-color-scss-mixin/</link>
+				<guid isPermaLink="true">http://damonbauer.me/incrementing-color-scss-mixin/</guid>
+			</item>
+		
 	</channel>
 </rss>
