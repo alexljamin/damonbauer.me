@@ -10,4 +10,4 @@ permalink: /:title/
 
 # Build settings
 markdown: kramdown
-exclude: ["gulpfile.js", "node_modules", "README", "package.json", "Gemfile", "Gemfile.lock"]
+exclude: ["gulpfile.js", "node_modules", "README.md", "package.json", "Gemfile", "Gemfile.lock", ".editorconfig", ".gitignore"]

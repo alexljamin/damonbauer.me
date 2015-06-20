@@ -2,6 +2,7 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
+var ghPages     = require('gulp-gh-pages');
 var cp          = require('child_process');
 var jekyll      = process.platform === "win32" ? "jekyll.bat" : "jekyll";
 
@@ -60,6 +61,14 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch('_scss/*.scss', ['sass']);
   gulp.watch(['index.html', '_layouts/*', '_posts/*', '_drafts/*'], ['jekyll-rebuild']);
+});
+
+gulp.task('deploy', ['sass'], function() {
+  cp.spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit' })
+  .on('close', done);
+
+  gulp.src('./_site/**/*')
+  .pipe(ghPages());
 });
 
 /**
