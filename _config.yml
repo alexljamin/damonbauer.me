@@ -9,6 +9,9 @@ github_username:  damonbauer
 permalink: /:title/
 feed: http://feeds.feedburner.com/damonbauer
 
+gems:
+  - jekyll-sitemap
+
 # Build settings
 markdown: kramdown
 exclude: ["gulpfile.js", "node_modules", "README.md", "package.json", "Gemfile", "Gemfile.lock", ".editorconfig", ".gitignore"]
