@@ -7,6 +7,7 @@ url: http://damonbauer.me
 twitter_username: damon_bauer
 github_username:  damonbauer
 permalink: /:title/
+feed: http://feeds.feedburner.com/damonbauer
 
 # Build settings
 markdown: kramdown
