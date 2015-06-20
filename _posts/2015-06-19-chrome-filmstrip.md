@@ -39,7 +39,7 @@ By seeing when and how your site is painting to the screen, you can begin to fin
 If the first few seconds of the page load are a blank white screen, you need to work on improving the _Time to First Byte_. This is typically a symptom of an overloaded server (especially common if you use a shared server), or inefficient code (such as a poorly written database query) or memory leaks. [See this post for more details](http://www.websiteoptimization.com/speed/tweak/time-to-first-byte/).
 
 ###Custom Fonts
-If site is loading quickly but your text is not visible until very late, I'd assume you're using a custom font. This side effect makes your site _feel_ slower; the term being used to address this issue is **perceived performance**. In order to make your site feel faster and allow users to start reading content immediately, you can use a web font loader, which will allow you to:
+If your site is loading quickly but your text is not visible until very late, I'd assume you're using a custom font. This side effect makes your site _feel_ slower; the term being used to address this issue is **perceived performance**. In order to make your site feel faster and allow users to start reading content immediately, you can use a web font loader, which will allow you to:
 
 * Render your content using a web safe font stack, such as `html { font-family: Arial, Helvetica, sans-serif }`, by default
 * Once the web font loader has detected that your custom fonts have successfully downloaded & parsed, add a class to the `html` or `body` tag, like so:
