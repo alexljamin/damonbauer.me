@@ -77,6 +77,8 @@ The list of performance considerations is continuing to grow. Hopefully now you 
 
 Feel free to reach out to me via [Twitter](https://twitter.com/damon_bauer) or [email](mailto:hello@damonbauer.me) if you need some help improving your site's performance.
 
+_A special thanks goes out to [@elijahmanor](http://twitter.com/elijahmanor) for showing me the Chrome Filmstrip feature in the first place._
+
 <hr class="footnote-separator">
 
 <a name="fold"></a>
