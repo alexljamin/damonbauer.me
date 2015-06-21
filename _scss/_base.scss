@@ -6,18 +6,25 @@
 
 html {
   overflow-y: scroll;
+  font-family: monospace;
+  font-size: 18px;
+  background-color: $blue;
+  color: $text;
 }
 
 body {
-  font-family: monospace;
-  font-size: 18px;
-  background: $blue;
-  color: $text;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 0 1em;
+
+  @media screen and (min-width: 50em) {
+    padding: 0;
+  }
 }
 
 p, ul, ol {
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
 }
 
 a {
