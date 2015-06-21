@@ -13,7 +13,7 @@ You may have heard of the wonderful site, [WebpageTest](http://webpagetest.org),
 <div class="iframe-container">
 	<iframe src="https://www.youtube.com/embed/5HZWE8-V-Fo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
-
+<br>
 First, make sure you have [Chrome Canary](https://www.google.com/chrome/browser/canary.html). Then, follow these steps:
 
 * Go to the Chrome Flags page (chrome://flags/#enable-devtools-experiments)

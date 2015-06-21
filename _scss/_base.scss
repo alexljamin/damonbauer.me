@@ -13,14 +13,10 @@ body {
   font-size: 18px;
   background: $blue;
   color: $text;
-
-  .fonts-loaded & {
-    @extend %Inconsolata;
-  }
 }
 
 p, ul, ol {
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
@@ -32,6 +28,7 @@ a {
   &:hover,
   &:focus {
     border-bottom-color: $red;
+    outline-color: $red;
   }
 }
 
