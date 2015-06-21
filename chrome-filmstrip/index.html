@@ -5,27 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Enable an experimental feature of Chrome to see how quickly your site is loading.">
-
   <title>Chrome Filmstrip & Improving Page Speed | Damon Bauer</title>
-
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
   <link rel="canonical" href="http://damonbauer.me/chrome-filmstrip/">
-  
-  <style type="text/css">*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll}body{font-family:monospace;font-size:18px;background:#373a4a;color:#c4c4c4}p,ul,ol{line-height:1.7;margin-bottom:1.5rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845;outline-color:#e64845}b,strong,h1,h2,h3,header a{font-weight:700}img{max-width:100%}blockquote{margin-bottom:1.5em;padding:0.3125em 0.625em;font-style:italic;background:#c4c4c4;color:#373a4a}blockquote p{margin:0}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5rem 0 2.5rem;text-align:center}.Masthead a{display:inline-block;border-bottom:2px solid transparent;font-size:2.75rem;font-weight:bold;letter-spacing:5px}@media screen and (min-width: 50em){.Masthead a{font-size:3rem;}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{display:block;padding-top:.5rem;font-size:1rem;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px;}}#wrap{margin:0 auto;max-width:50rem;padding:0 1rem}@media screen and (min-width: 50em){#wrap{padding:0;}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3rem}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-2.5rem;left:50%;margin-left:-1rem;font-size:2rem;content:"\2026"}.post-header{display:block;margin-bottom:1.5rem}.post-link{position:relative;padding-right:1.75rem}.post-link:hover:after,.post-link:focus:after{position:absolute;right:0;top:50%;margin-top:-1.35rem;content:"\2192"}.post-meta{display:block;margin-top:.5rem;font-size:1rem}pre{padding:0.5rem;margin-bottom:0.5rem;font-size:0.8rem;color:#373a4a}p code,li code{padding:0.25rem;font-size:0.8rem;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2rem}.post ul ul{margin-bottom:0}.post h2{margin:2rem 0 .5rem}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}.iframe-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}</style>
+  <link href="http://feeds.feedburner.com/damonbauer" rel="alternate" type="application/atom+xml">
+  <style type="text/css">*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll;font-family:monospace;font-size:18px;background-color:#373a4a;color:#c4c4c4}body{margin:0 auto;max-width:50em;padding:0 1em}@media screen and (min-width: 50em){body{padding:0;}}p,ul,ol{line-height:1.7;margin-bottom:1.5em}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845;outline-color:#e64845}b,strong,h1,h2,h3,header a{font-weight:700}img{max-width:100%}blockquote{margin-bottom:1.5em;padding:0.3125em 0.625em;font-style:italic;background:#c4c4c4;color:#373a4a}blockquote p{margin:0}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5em 0 2.5em;text-align:center}.Masthead a{display:inline-block;border-bottom:2px solid transparent;font-size:2.75rem;font-weight:bold;letter-spacing:3px}@media screen and (min-width: 50em){.Masthead a{font-size:3rem;}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{display:block;padding-top:.5em;font-size:1rem;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px;}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3em}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-1em;left:50%;margin-left:-1em;line-height:1;font-size:2em;content:"\2026"}.post-header{display:block;margin-bottom:1em}.post-meta{display:block;font-size:1rem}pre{padding:0.5em;margin-bottom:0.5em;font-size:0.8rem;color:#373a4a}p code,li code{padding:0.25em;font-size:0.8rem;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2em}.post ul ul{margin-bottom:0}.post h2{margin:2em 0 0.5em}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}.iframe-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}</style>
 </head>
 
 
   <body>
-    <div id="wrap">
-      <header role="banner" class="Masthead">
+    <header role="banner" class="Masthead">
   <a href="/">Damon Bauer</a>
   <span>Front End Developer &bull; Nashville, TN</span>
 </header>
 
 
-      <main role="main">
-        <div class="post">
+    <main role="main">
+      <div class="post">
   <header class="post-header">
     <h1 class="post-title">Chrome Filmstrip & Improving Page Speed</h1>
     <span class="post-meta">June 19, 2015</span>
@@ -127,9 +124,9 @@ The <code>success</code> method above is invoked when each variation of Open San
   </article>
 </div>
 
-      </main>
+    </main>
 
-      <footer role="siteinfo">
+    <footer role="siteinfo">
   <ul>
     <li>
       <a href="https://github.com/damonbauer">
@@ -154,8 +151,7 @@ The <code>success</code> method above is invoked when each variation of Open San
   </ul>
 </footer>
 
-    </div>
-
+    
     <script async>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-64324219-1', 'auto');ga('send', 'pageview');</script>
 
   </body>
