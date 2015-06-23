@@ -10,7 +10,7 @@ You may have heard of the wonderful site, [WebpageTest](http://webpagetest.org),
 
 ##What Is Filmstrip?
 Simply put, the Filmstrip is a series of images that display what a page rendered at that specific millisecond of the page load lifecycle.
-<video src="/assets/videos/chrome-filmstrip/filmstrip.mp4" preload autoplay loop></video>
+<video style="max-width:100%" src="/assets/videos/chrome-filmstrip/filmstrip.mp4" preload autoplay loop></video>
 
 ##Getting Filmstrip in Chrome
 
