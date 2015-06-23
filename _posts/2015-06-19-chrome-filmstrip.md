@@ -8,6 +8,10 @@ description: "Enable an experimental feature of Chrome to see how quickly your s
 You may have heard of the wonderful site, [WebpageTest](http://webpagetest.org), when researching ways to improve your site performance. One of the most useful features (in my opinion) is the Filmstrip; it shows you incremental screenshots of the browser rendering your site, so you can see how quickly users are able to start consuming content. As of the past couple of months, you can enable similar functionality in Chrome!
 <!--more-->
 
+##What Is Filmstrip?
+Simply put, the Filmstrip is a series of images that display what a page rendered at that specific millisecond of the page load lifecycle.
+<video src="/assets/videos/chrome-filmstrip/filmstrip.mp4" preload autoplay loop></video>
+
 ##Getting Filmstrip in Chrome
 
 <div class="iframe-container">
