@@ -7,6 +7,20 @@
 		<atom:link href="http://damonbauer.me/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>GitHub Patchwork: Nashville</title>
+				
+				
+					<description>&lt;p&gt;This week, I had the opportunity to attend a GitHub Patchwork event in Nashville, TN, where I call home. At first, I was apprehensive about going; I’m typically shy and feel as if I don’t have much to offer at an event with people I’m not familiar with. However, after talking with a few friends about the event, I decided that it would be a good thing to experience. Myself and my coworker &amp;amp; friend &lt;a href=&quot;http://twitter.com/buddylreno&quot;&gt;Buddy&lt;/a&gt; both signed up to serve as mentors as we both have a good bit of history working with Git &amp;amp; GitHub.
+&lt;!--more--&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 25 Jun 2015 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/github-patchwork/</link>
+				<guid isPermaLink="true">http://damonbauer.me/github-patchwork/</guid>
+			</item>
+		
+			<item>
 				<title>Chrome Filmstrip &amp; Improving Page Speed</title>
 				
 				
