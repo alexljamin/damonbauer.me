@@ -76,3 +76,6 @@ DEPENDENCIES
   jekyll
   jekyll-markdown-block
   jekyll-sitemap
+
+BUNDLED WITH
+   1.10.2
