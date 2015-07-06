@@ -6,16 +6,16 @@
 
 html {
   overflow-y: scroll;
-  font-family: monospace;
-  font-size: 18px;
   background-color: $blue;
   color: $text;
 }
 
 body {
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 36em;
   padding: 0 1em;
+  font-family: monospace;
+  font-size: 0px + $doc-font-size;
 
   @media screen and (min-width: 50em) {
     padding: 0;
@@ -23,8 +23,7 @@ body {
 }
 
 p, ul, ol {
-  line-height: 1.7;
-  margin-bottom: 1.5em;
+  @include font-size($doc-font-size);
 }
 
 a {
@@ -54,7 +53,7 @@ figure {
 }
 
 figcaption {
-  font-size: 0.875rem;
+  @include font-size(18);
   font-style: italic;
 }
 

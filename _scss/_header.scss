@@ -4,14 +4,14 @@
   text-align: center;
 
   a {
+    @include font-size(42);
     display: inline-block;
     border-bottom: 2px solid transparent;
-    font-size: 2.75rem;
     font-weight: bold;
     letter-spacing: 3px;
 
     @media screen and (min-width: 50em) {
-      font-size: 3rem;
+      @include font-size(64);
     }
 
     &:hover,
@@ -21,9 +21,9 @@
   }
 
   span {
+    @include font-size($doc-font-size);
     display: block;
-    padding-top: .5em;
-    font-size: 1rem;
+    margin-bottom: 0;
     font-style: italic;
     color: $text;
 

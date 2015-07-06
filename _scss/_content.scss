@@ -27,22 +27,26 @@
   margin-bottom: 1em;
 }
 
+.post-title {
+  @include font-size(42);
+  margin-bottom: 0;
+}
+
 .post-meta {
   display: block;
-  font-size: 1rem;
+  @include font-size(18);
 }
 
 pre {
+  @include font-size(18);
   padding: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: 0.8rem;
   color: $blue;
 }
 
 p code,
 li code {
+  @include font-size(18);
   padding: 0.25em;
-  font-size: 0.8rem;
   background: rgba(white, 0.75);
   color: $blue;
 }
@@ -82,6 +86,6 @@ hr {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
   }
 }
