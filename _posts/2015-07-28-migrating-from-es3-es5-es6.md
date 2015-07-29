@@ -39,14 +39,14 @@ While this does work, I wanted to get rid of the `var that = this` for three rea
 
 1. **Clutter.** Adding an extra variable assignment adds code and forces context switching.
 2. **It looks/feels wrong.** I could use `self` instead of `that`, but that doesn't solve the larger problem.
-3. **I haven't seen it used lately.** The biggest reason is wanted to change this is because I don't see this sort of code used much any more. I kept thinking "there has be better ways of doing this".
+3. **I haven't seen it used lately.** The biggest reason I wanted to change this is because I don't see this sort of code used much any more. I kept thinking "there has to be better ways of doing this".
 
 ##Improved Using ES5
 Along with ES5 came [loads of new methods][2], one of which is `Function.prototype.bind()`. From the [MDN docs][3]:
 
 >The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value.
 
-Ben Howdle [explains `bind` way better than I could][4] over at Smashing Magazine. For now, lets look my example and see how `bind` changes it:
+Ben Howdle [explains `bind` way better than I could][4] over at Smashing Magazine. For now, let's look at the previous example and see how `bind` changes it:
 
 {% highlight js %}
 var setup = function() {
