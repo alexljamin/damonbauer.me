@@ -40,21 +40,21 @@
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.Ad&quot;</span><span class="p">);</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">visibleClass</span> <span class="o">=</span> <span class="s2">&quot;is-visible&quot;</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span> <span class="o">=</span> <span class="s2">&quot;//codepen.io/damonbauer/pen/LVgxxN.html&quot;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.Ad&quot;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">visibleClass</span> <span class="o">=</span> <span class="s2">&quot;is-visible&quot;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span> <span class="o">=</span> <span class="s2">&quot;//codepen.io/damonbauer/pen/LVgxxN.html&quot;</span><span class="p">;</span>
 
-	<span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
-	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="nx">that</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
-		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-			<span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
-		<span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-			<span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
-		<span class="p">}).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-			<span class="nx">that</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
-	<span class="p">});</span>
+  <span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="nx">that</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">that</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
+  <span class="p">});</span>
 <span class="p">};</span></code></pre></div>
 <p><br /></p>
 
@@ -76,17 +76,17 @@
 <p>Ben Howdle <a href="http://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">explains <code>bind</code> way better than I could</a> over at Smashing Magazine. For now, lets look my example and see how <code>bind</code> changes it:</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">// vars...</span>
+  <span class="c1">// vars...</span>
 
-	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
-		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
-		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
-		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
-		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
-	<span class="p">};</span>
+  <span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+  <span class="p">};</span>
 <span class="p">};</span></code></pre></div>
 <p><br /></p>
 
@@ -98,12 +98,12 @@
 <p>The <code>=&gt;</code>, known as the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">“fat arrow”</a> can be used to simplify anonymous functions and automatically binds <code>this</code> for you.</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">// vars...</span>
+  <span class="c1">// vars...</span>
 
-	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
-		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">)</span>
-		<span class="p">.</span><span class="nx">fail</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">)</span>
-		<span class="p">.</span><span class="nx">always</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">);</span>
+  <span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">fail</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">always</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">);</span>
 <span class="p">};</span></code></pre></div>
 <p><br /></p>
 
