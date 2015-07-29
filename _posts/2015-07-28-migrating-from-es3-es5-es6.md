@@ -67,7 +67,7 @@ var setup = function() {
 This works great and we no longer need to store an extra property. I do find it somewhat annoying that `.bind(this)` has to be written for every function, whereas `var that = this` from the first example is only written once. I think it's a small price to pay and I'm willing to do so in this instance.
 
 ##Simplified By Writing With ES6
-Let's take this to the next level! To use the next example, I'd recommend using [Babel][5] compile ES6 back down to ES5, so browsers that don't yet understand ES6 will still function.
+Let's take this to the next level! To use the next example, I'd recommend using [Babel][5] to compile ES6 back down to ES5, so browsers that don't yet understand ES6 will still function.
 
 The `=>`, known as the ["fat arrow"][7] can be used to simplify anonymous functions and automatically binds `this` for you.
 
