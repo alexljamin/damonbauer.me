@@ -5,7 +5,7 @@ date:  2015-07-28
 description: "A look at how a snippet of code can be written with ES3, ES5 and ES6."
 ---
 
-I've been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I'd written, so I reached out to [a friend](1) to get some advice.
+I've been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I'd written, so I reached out to [a friend][1] to get some advice.
 <!--more-->
 
 ##The Code In ES3
@@ -67,16 +67,16 @@ var setup = function() {
 This works great and we no longer need to store an extra property. I do find it somewhat annoying that `.bind(this)` has to be written for every function, whereas `var that = this` from the first example is only written once. I think it's a small price to pay and I'm willing to do so in this instance.
 
 ##Simplified By Writing With ES6
-Let's take this to the next level! To use the next example, you'll need some way to compile ES6 back down to ES5; I'd recommend [Babel][5] or [Traceur][6].
+Let's take this to the next level! To use the next example, I'd recommend using [Babel][5] compile ES6 back down to ES5, so browsers that don't yet understand ES6 will still function.
 
-The `=>`, known as the ["fat arrow"][7] can be used to simplify anonymous functions and automatically binds `this` for you. 
+The `=>`, known as the ["fat arrow"][7] can be used to simplify anonymous functions and automatically binds `this` for you.
 
 {% highlight js %}
 var setup = function() {
   // vars...
 
   reqwest({ url: this.adUrl, crossOrigin: true })
-    .then(response => this.ad = response)
+    .then((response) => this.ad = response)
     .fail(() => this.ad = "Ad could not be loaded.")
     .always(() => this.adContainer.innerHTML = this.ad);
 };
@@ -85,7 +85,7 @@ var setup = function() {
 The first time I saw this, I [did a dance][8]. The conciseness and readability of this code is awesome! What I learned:
 
 * if the function doesn't have any arguments, writing `()` creates an anonymous function
-* if the function has one argument, it is written to the left of the fat arrow, with nothing surrounding it
+* if the function has one argument, it is written to the left of the fat arrow, with parentheses optionally surrounding the argument
 * the function will return the value of the expression to the right of the fat arrow
 
 After seeing this, I'm really excited to start learning more and getting to know ES6.
