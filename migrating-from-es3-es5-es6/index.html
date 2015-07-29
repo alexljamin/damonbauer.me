@@ -29,7 +29,7 @@
   </header>
 
   <article class="post-content">
-    <p>I’ve been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I’d written, so I reached out to <a href="1">a friend</a> to get some advice.
+    <p>I’ve been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I’d written, so I reached out to <a href="http://twitter.com/elijahmanor">a friend</a> to get some advice.
 <!--more--></p>
 
 <h2 id="the-code-in-es3">The Code In ES3</h2>
@@ -93,7 +93,7 @@
 <p>This works great and we no longer need to store an extra property. I do find it somewhat annoying that <code>.bind(this)</code> has to be written for every function, whereas <code>var that = this</code> from the first example is only written once. I think it’s a small price to pay and I’m willing to do so in this instance.</p>
 
 <h2 id="simplified-by-writing-with-es6">Simplified By Writing With ES6</h2>
-<p>Let’s take this to the next level! To use the next example, you’ll need some way to compile ES6 back down to ES5; I’d recommend <a href="https://babeljs.io/">Babel</a> or <a href="https://github.com/google/traceur-compiler">Traceur</a>.</p>
+<p>Let’s take this to the next level! To use the next example, I’d recommend using <a href="https://babeljs.io/">Babel</a> compile ES6 back down to ES5, so browsers that don’t yet understand ES6 will still function.</p>
 
 <p>The <code>=&gt;</code>, known as the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">“fat arrow”</a> can be used to simplify anonymous functions and automatically binds <code>this</code> for you.</p>
 
@@ -101,7 +101,7 @@
   <span class="c1">// vars...</span>
 
   <span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">fail</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">always</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">);</span>
 <span class="p">};</span></code></pre></div>
@@ -111,7 +111,7 @@
 
 <ul>
   <li>if the function doesn’t have any arguments, writing <code>()</code> creates an anonymous function</li>
-  <li>if the function has one argument, it is written to the left of the fat arrow, with nothing surrounding it</li>
+  <li>if the function has one argument, it is written to the left of the fat arrow, with parentheses optionally surrounding the argument</li>
   <li>the function will return the value of the expression to the right of the fat arrow</li>
 </ul>
 

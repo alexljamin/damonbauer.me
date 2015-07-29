@@ -10,7 +10,7 @@
 				<title>Migrating code from ES3 &amp;rarr; ES5 &amp;rarr; ES6</title>
 				
 				
-					<description>&lt;p&gt;I’ve been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I’d written, so I reached out to &lt;a href=&quot;1&quot;&gt;a friend&lt;/a&gt; to get some advice.
+					<description>&lt;p&gt;I&amp;#8217;ve been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I&amp;#8217;d written, so I reached out to &lt;a href=&quot;http://twitter.com/elijahmanor&quot;&gt;a friend&lt;/a&gt; to get some advice.
 &lt;!--more--&gt;&lt;/p&gt;
 
 </description>
@@ -35,7 +35,7 @@
 				<title>GitHub Patchwork: Nashville</title>
 				
 				
-					<description>&lt;p&gt;This week, I had the opportunity to attend a GitHub Patchwork event in Nashville, TN, where I call home. At first, I was apprehensive about going; I’m typically shy and feel as if I don’t have much to offer at an event with people I’m not familiar with. However, after talking with a few friends about the event, I decided that it would be a good thing to experience. Myself and my coworker &amp;amp; friend &lt;a href=&quot;http://twitter.com/buddylreno&quot;&gt;Buddy&lt;/a&gt; both signed up to serve as mentors as we both have a good bit of history working with Git &amp;amp; GitHub.
+					<description>&lt;p&gt;This week, I had the opportunity to attend a GitHub Patchwork event in Nashville, TN, where I call home. At first, I was apprehensive about going; I&amp;#8217;m typically shy and feel as if I don&amp;#8217;t have much to offer at an event with people I&amp;#8217;m not familiar with. However, after talking with a few friends about the event, I decided that it would be a good thing to experience. Myself and my coworker &amp;amp; friend &lt;a href=&quot;http://twitter.com/buddylreno&quot;&gt;Buddy&lt;/a&gt; both signed up to serve as mentors as we both have a good bit of history working with Git &amp;amp; GitHub.
 &lt;!--more--&gt;&lt;/p&gt;
 
 </description>
@@ -63,7 +63,7 @@
 				<title>What is BrowserSync and How Do You Use it?</title>
 				
 				
-					<description>&lt;p&gt;If you’ve not used &lt;a href=&quot;http://browsersync.io&quot;&gt;BrowserSync&lt;/a&gt; in your daily workflow, you’re missing out. It’s become an indispensible tool for me in the past two years by improving efficiency and reducing cross browser inconsistencies. In this post, I’ll introduce BrowserSync and explore a few use cases that I use on a regular basis.
+					<description>&lt;p&gt;If you&amp;#8217;ve not used &lt;a href=&quot;http://browsersync.io&quot;&gt;BrowserSync&lt;/a&gt; in your daily workflow, you&amp;#8217;re missing out. It&amp;#8217;s become an indispensible tool for me in the past two years by improving efficiency and reducing cross browser inconsistencies. In this post, I&amp;#8217;ll introduce BrowserSync and explore a few use cases that I use on a regular basis.
 &lt;!--more--&gt;&lt;/p&gt;
 
 </description>
@@ -77,7 +77,7 @@
 				<title>Is There a &amp;ldquo;Better&amp;rdquo; Text Decoration?</title>
 				
 				
-					<description>&lt;p&gt;Are you looking to change the thickness, color, opacity or position of &lt;code&gt;text-decoration&lt;/code&gt;? While the following technique isn’t &lt;em&gt;actually&lt;/em&gt; using this property, I’m going to demonstrate a way to fake some neat visual changes that simulate this property and take it a step further.
+					<description>&lt;p&gt;Are you looking to change the thickness, color, opacity or position of &lt;code&gt;text-decoration&lt;/code&gt;? While the following technique isn&amp;#8217;t &lt;em&gt;actually&lt;/em&gt; using this property, I&amp;#8217;m going to demonstrate a way to fake some neat visual changes that simulate this property and take it a step further.
 &lt;!--more--&gt;&lt;/p&gt;
 
 </description>
@@ -91,7 +91,7 @@
 				<title>Organizing Jekyll Pages</title>
 				
 				
-					<description>&lt;p&gt;I realize I’m pretty late to the game, but &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is great. I’ve tried various blogging platforms &amp;amp; tools in the past, but since making the switch to Jekyll a few months ago, I’ve been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it’s set up to handle static pages. No more!&lt;/p&gt;
+					<description>&lt;p&gt;I realize I&amp;#8217;m pretty late to the game, but &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is great. I&amp;#8217;ve tried various blogging platforms &amp;amp; tools in the past, but since making the switch to Jekyll a few months ago, I&amp;#8217;ve been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it&amp;#8217;s set up to handle static pages. No more!&lt;/p&gt;
 
 </description>
 				
@@ -104,7 +104,7 @@
 				<title>Implementing an SVG Icon System</title>
 				
 				
-					<description>&lt;p&gt;In the last few months, &lt;abbr title=&quot;Scalable Vector Graphics&quot;&gt;SVG&lt;/abbr&gt; has started to once again gain traction in the world of front end development&lt;sup&gt;&lt;a href=&quot;#footnote-1&quot; name=&quot;fn-1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, thanks in part to the amazing work of some &lt;a href=&quot;https://css-tricks.com/mega-list-svg-information/&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;http://sarasoueidan.com/articles/index.html&quot;&gt;smart&lt;/a&gt; &lt;a href=&quot;http://tutorials.jenkov.com/svg/svg-and-css.html&quot;&gt;people&lt;/a&gt;. For some time now, I’ve wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I’ve been exploring the world of SVG and trying to find a solution that is easy to implement &amp;amp; maintain, light, and cross-browser compatible.
+					<description>&lt;p&gt;In the last few months, &lt;abbr title=&quot;Scalable Vector Graphics&quot;&gt;SVG&lt;/abbr&gt; has started to once again gain traction in the world of front end development&lt;sup&gt;&lt;a href=&quot;#footnote-1&quot; name=&quot;fn-1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, thanks in part to the amazing work of some &lt;a href=&quot;https://css-tricks.com/mega-list-svg-information/&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;http://sarasoueidan.com/articles/index.html&quot;&gt;smart&lt;/a&gt; &lt;a href=&quot;http://tutorials.jenkov.com/svg/svg-and-css.html&quot;&gt;people&lt;/a&gt;. For some time now, I&amp;#8217;ve wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I&amp;#8217;ve been exploring the world of SVG and trying to find a solution that is easy to implement &amp;amp; maintain, light, and cross-browser compatible.
 &lt;!--more--&gt;&lt;/p&gt;
 
 </description>
