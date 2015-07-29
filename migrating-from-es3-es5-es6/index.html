@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A look at how a snippet of code can be written with ES3, ES5 and ES6.">
+  <title>Migrating code from ES3 &rarr; ES5 &rarr; ES6 | Damon Bauer</title>
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="canonical" href="http://damonbauer.me/migrating-from-es3-es5-es6/">
+  <link href="http://feeds.feedburner.com/damonbauer" rel="alternate" type="application/atom+xml">
+  <style type="text/css">*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll;background-color:#373a4a;color:#c4c4c4}body{margin:0 auto;max-width:36em;padding:0 1em;font-family:monospace;font-size:22px}@media screen and (min-width: 50em){body{padding:0;}}p,ul,ol{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845;outline-color:#e64845}b,strong,h1,h2,h3,header a{font-weight:700}img{max-width:100%}figure{margin-bottom:1.5rem}figcaption{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;font-style:italic}blockquote{margin-bottom:1.5em;padding:0.3125em 0.625em;font-style:italic;background:#c4c4c4;color:#373a4a}blockquote p{margin:0}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5em 0 2.5em;text-align:center}.Masthead a{font-size:42px;font-size:1.90909rem;line-height:0.9048;margin-bottom:38px;margin-bottom:1.72727rem;display:inline-block;border-bottom:2px solid transparent;font-weight:bold;letter-spacing:3px}@media screen and (min-width: 50em){.Masthead a{font-size:64px;font-size:2.90909rem;line-height:0.5938;margin-bottom:38px;margin-bottom:1.72727rem;}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem;display:block;margin-bottom:0;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px;}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3em}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-1em;left:50%;margin-left:-1em;line-height:1;font-size:2em;content:"\2026"}.post-header{display:block;margin-bottom:1em}.post-title{font-size:42px;font-size:1.90909rem;line-height:0.9048;margin-bottom:38px;margin-bottom:1.72727rem;margin-bottom:0}.post-meta{display:block;font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem}pre{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.5em;color:#373a4a}p code,li code{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.25em;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2em}.post ul ul{margin-bottom:0}.post h2{margin:2em 0 0.5em}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}.iframe-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}</style>
+</head>
+
+
+  <body>
+    <header role="banner" class="Masthead">
+  <a href="/">Damon Bauer</a>
+  <span>Front End Developer &bull; Nashville, TN</span>
+</header>
+
+
+    <main role="main">
+      <div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Migrating code from ES3 &rarr; ES5 &rarr; ES6</h1>
+    <span class="post-meta">July 28, 2015</span>
+  </header>
+
+  <article class="post-content">
+    <p>I’ve been trying to find ways to make small gains in my overall understanding of JavaScript. While working on a code sample for a different blog post, I knew there was probably a way to improve what I’d written, so I reached out to <a href="1">a friend</a> to get some advice.
+<!--more--></p>
+
+<h2 id="the-code-in-es3">The Code In ES3</h2>
+<p>I started out with the following code, written with ES3. To be truthful, this example is the level of JavaScript I know and it worked, so it served its purpose. However, knowing that my JavaScript understanding isn’t at the level where I want it to be, I didn’t want to just end it here.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">$</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.Ad&quot;</span><span class="p">);</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">visibleClass</span> <span class="o">=</span> <span class="s2">&quot;is-visible&quot;</span><span class="p">;</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span> <span class="o">=</span> <span class="s2">&quot;//codepen.io/damonbauer/pen/LVgxxN.html&quot;</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="nx">that</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+		<span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
+		<span class="p">}).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
+	<span class="p">});</span>
+<span class="p">};</span></code></pre></div>
+<p><br /></p>
+
+<p>While this does work, I wanted to get rid of the <code>var that = this</code> for three reasons:</p>
+
+<ol>
+  <li><strong>Clutter.</strong> Adding an extra variable assignment adds code and forces context switching.</li>
+  <li><strong>It looks/feels wrong.</strong> I could use <code>self</code> instead of <code>that</code>, but that doesn’t solve the larger problem.</li>
+  <li><strong>I haven’t seen it used lately.</strong> The biggest reason is wanted to change this is because I don’t see this sort of code used much any more. I kept thinking “there has be better ways of doing this”.</li>
+</ol>
+
+<h2 id="improved-using-es5">Improved Using ES5</h2>
+<p>Along with ES5 came <a href="http://speakingjs.com/es5/ch25.html">loads of new methods</a>, one of which is <code>Function.prototype.bind()</code>. From the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN docs</a>:</p>
+
+<blockquote>
+  <p>The <code>bind()</code> method creates a new function that, when called, has its <code>this</code> keyword set to the provided value.</p>
+</blockquote>
+
+<p>Ben Howdle <a href="http://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">explains <code>bind</code> way better than I could</a> over at Smashing Magazine. For now, lets look my example and see how <code>bind</code> changes it:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// vars...</span>
+
+	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">;</span>
+		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">;</span>
+		<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+	<span class="p">};</span>
+<span class="p">};</span></code></pre></div>
+<p><br /></p>
+
+<p>This works great and we no longer need to store an extra property. I do find it somewhat annoying that <code>.bind(this)</code> has to be written for every function, whereas <code>var that = this</code> from the first example is only written once. I think it’s a small price to pay and I’m willing to do so in this instance.</p>
+
+<h2 id="simplified-by-writing-with-es6">Simplified By Writing With ES6</h2>
+<p>Let’s take this to the next level! To use the next example, you’ll need some way to compile ES6 back down to ES5; I’d recommend <a href="https://babeljs.io/">Babel</a> or <a href="https://github.com/google/traceur-compiler">Traceur</a>.</p>
+
+<p>The <code>=&gt;</code>, known as the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">“fat arrow”</a> can be used to simplify anonymous functions and automatically binds <code>this</code> for you.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// vars...</span>
+
+	<span class="nx">reqwest</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">adUrl</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+		<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="nx">response</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">fail</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span> <span class="o">=</span> <span class="s2">&quot;Ad could not be loaded.&quot;</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">always</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">adContainer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ad</span><span class="p">);</span>
+<span class="p">};</span></code></pre></div>
+<p><br /></p>
+
+<p>The first time I saw this, I <a href="http://media3.giphy.com/media/bTzFnjHPuVvva/giphy.gif">did a dance</a>. The conciseness and readability of this code is awesome! What I learned:</p>
+
+<ul>
+  <li>if the function doesn’t have any arguments, writing <code>()</code> creates an anonymous function</li>
+  <li>if the function has one argument, it is written to the left of the fat arrow, with nothing surrounding it</li>
+  <li>the function will return the value of the expression to the right of the fat arrow</li>
+</ul>
+
+<p>After seeing this, I’m really excited to start learning more and getting to know ES6.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>I’ve started to take a more critical look at how I can improve my breadth and depth of knowledge of JavaScript, even in the smaller, more basic tasks. Additionally, I think I’ll start doing things like write <a href="http://es6katas.org/">ES6 Katas</a>, <a href="https://github.com/ericdouglas/ES6-Learning#talks">watch talks</a> and <a href="https://leanpub.com/understandinges6/read">read</a> <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond">books</a>. If you have any resources/tips for learning ES6 (or advancing in JavaScript understanding in general), I’d love to hear them - <a href="http://twitter.com/damon_bauer">let me know on Twitter</a>.</p>
+
+
+  </article>
+</div>
+
+    </main>
+
+    <footer role="siteinfo">
+  <ul>
+    <li>
+      <a href="https://github.com/damonbauer">
+        <svg viewBox="0 0 16 16">
+        <path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/damon_bauer">
+        <svg viewBox="0 0 16 16">
+        <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+          c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="http://feeds.feedburner.com/damonbauer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M161.757 406.25c0 30.79-24.96 55.75-55.75 55.75s-55.75-24.96-55.75-55.75 24.96-55.75 55.75-55.75 55.75 24.958 55.75 55.75zm-111.5-215.826v82.593C153.993 274.083 238.17 358.26 239.237 462h82.593c-1.066-149.52-122.056-270.51-271.574-271.576zm0-57.822c87.694.38 170.083 34.695 232.134 96.747 62.18 62.17 96.51 144.76 96.76 232.65h82.6C461.23 234.856 277.334 50.792 50.258 50v82.6z"/></svg>
+      </a>
+    </li>
+  </ul>
+</footer>
+
+    
+    <script async>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-64324219-1', 'auto');ga('send', 'pageview');</script>
+
+  </body>
+</html>
