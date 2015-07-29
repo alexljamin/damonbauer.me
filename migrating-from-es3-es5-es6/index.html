@@ -63,7 +63,7 @@
 <ol>
   <li><strong>Clutter.</strong> Adding an extra variable assignment adds code and forces context switching.</li>
   <li><strong>It looks/feels wrong.</strong> I could use <code>self</code> instead of <code>that</code>, but that doesn’t solve the larger problem.</li>
-  <li><strong>I haven’t seen it used lately.</strong> The biggest reason is wanted to change this is because I don’t see this sort of code used much any more. I kept thinking “there has be better ways of doing this”.</li>
+  <li><strong>I haven’t seen it used lately.</strong> The biggest reason I wanted to change this is because I don’t see this sort of code used much any more. I kept thinking “there has to be better ways of doing this”.</li>
 </ol>
 
 <h2 id="improved-using-es5">Improved Using ES5</h2>
@@ -73,7 +73,7 @@
   <p>The <code>bind()</code> method creates a new function that, when called, has its <code>this</code> keyword set to the provided value.</p>
 </blockquote>
 
-<p>Ben Howdle <a href="http://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">explains <code>bind</code> way better than I could</a> over at Smashing Magazine. For now, lets look my example and see how <code>bind</code> changes it:</p>
+<p>Ben Howdle <a href="http://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">explains <code>bind</code> way better than I could</a> over at Smashing Magazine. For now, let’s look at the previous example and see how <code>bind</code> changes it:</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// vars...</span>
