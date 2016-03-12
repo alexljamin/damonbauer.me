@@ -7,6 +7,19 @@
 		<atom:link href="http://damonbauer.me/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Getting Every Other Pair in a Ruby Array</title>
+				
+				
+					<description>&lt;p&gt;On a side project I’m working on, I am building a page that has a collection of cards on it in the &lt;a href=&quot;https://philipwalton.github.io/solved-by-flexbox/demos/media-object/&quot;&gt;“media object” format&lt;/a&gt;. To break up the collection, since there are ~ 16 cards in total, I am using flexbox’s &lt;code&gt;flex-direction: row-reverse&lt;/code&gt; to swap the order of the cards for every other pair of cards. Here’s a demo of what I’m referring to:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 11 Mar 2016 00:00:00 -0600</pubDate>
+				<link>http://damonbauer.me/every-other-pair-in-ruby-array/</link>
+				<guid isPermaLink="true">http://damonbauer.me/every-other-pair-in-ruby-array/</guid>
+			</item>
+		
+			<item>
 				<title>Migrating code from ES3 &amp;rarr; ES5 &amp;rarr; ES6</title>
 				
 				
@@ -126,19 +139,6 @@
 				<pubDate>Fri, 20 Feb 2015 00:00:00 -0600</pubDate>
 				<link>http://damonbauer.me/click-to-reveal-search-bar/</link>
 				<guid isPermaLink="true">http://damonbauer.me/click-to-reveal-search-bar/</guid>
-			</item>
-		
-			<item>
-				<title>Git Interactive Add</title>
-				
-				
-					<description>&lt;p&gt;There are numerous extra scripts that come with Git that can help you create more meaningful, specific commits to your repositories. One such script is “interactive” add, which I recently discovered while working on a project.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Sat, 20 Sep 2014 00:00:00 -0500</pubDate>
-				<link>http://damonbauer.me/git-interactive-add/</link>
-				<guid isPermaLink="true">http://damonbauer.me/git-interactive-add/</guid>
 			</item>
 		
 	</channel>

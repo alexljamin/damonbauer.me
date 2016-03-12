@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Move static pages into a central folder for better folder structure & organization using Jekyll.">
-  <title>Organizing Jekyll Pages | Damon Bauer</title>
+  <meta name="description" content="I needed to do something to every other pair of elements in a collection in Ruby. Here's how I did it.">
+  <title>Getting Every Other Pair in a Ruby Array | Damon Bauer</title>
   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="/favicon.ico" rel="icon" type="image/x-icon">
-  <link rel="canonical" href="http://damonbauer.me/organizing-jekyll-pages/">
+  <link rel="canonical" href="http://damonbauer.me/every-other-pair-in-ruby-array/">
   <link href="http://feeds.feedburner.com/damonbauer" rel="alternate" type="application/atom+xml">
   <style type="text/css">*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll;background-color:#373a4a;color:#c4c4c4}body{margin:0 auto;max-width:36em;padding:0 1em;font-family:monospace;font-size:22px}@media screen and (min-width: 50em){body{padding:0}}p,ul,ol{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845;outline-color:#e64845}b,strong,h1,h2,h3,header a{font-weight:700}img{max-width:100%}figure{margin-bottom:1.5rem}figcaption{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;font-style:italic}blockquote{margin-bottom:1.5em;padding:0.3125em 0.625em;font-style:italic;background:#c4c4c4;color:#373a4a}blockquote p{margin:0}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5em 0 2.5em;text-align:center}.Masthead a{font-size:42px;font-size:1.90909rem;line-height:0.9048;margin-bottom:38px;margin-bottom:1.72727rem;display:inline-block;border-bottom:2px solid transparent;font-weight:bold;letter-spacing:3px}@media screen and (min-width: 50em){.Masthead a{font-size:64px;font-size:2.90909rem;line-height:0.5938;margin-bottom:38px;margin-bottom:1.72727rem}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem;display:block;margin-bottom:0;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3em}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-1em;left:50%;margin-left:-1em;line-height:1;font-size:2em;content:"\2026"}.post-header{display:block;margin-bottom:1em}.post-title{font-size:42px;font-size:1.90909rem;line-height:0.9048;margin-bottom:38px;margin-bottom:1.72727rem;margin-bottom:0}.post-meta{display:block;font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem}pre{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.5em;color:#373a4a}p code,li code{font-size:18px;font-size:0.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.25em;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2em}.post ul ul{margin-bottom:0}.post h2{margin:2em 0 0.5em}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}.iframe-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}
 </style>
@@ -25,78 +25,65 @@
     <main role="main">
       <div class="post">
   <header class="post-header">
-    <h1 class="post-title">Organizing Jekyll Pages</h1>
-    <span class="post-meta">March 28, 2015</span>
+    <h1 class="post-title">Getting Every Other Pair in a Ruby Array</h1>
+    <span class="post-meta">March 11, 2016</span>
   </header>
 
   <article class="post-content">
-    <p>I realize I’m pretty late to the game, but <a href="http://jekyllrb.com">Jekyll</a> is great. I’ve tried various blogging platforms &amp; tools in the past, but since making the switch to Jekyll a few months ago, I’ve been encouraged to keep writing. One thing that has bugged me about using Jekyll is the way it’s set up to handle static pages. No more!</p>
+    <p>On a side project I’m working on, I am building a page that has a collection of cards on it in the <a href="https://philipwalton.github.io/solved-by-flexbox/demos/media-object/">“media object” format</a>. To break up the collection, since there are ~ 16 cards in total, I am using flexbox’s <code>flex-direction: row-reverse</code> to swap the order of the cards for every other pair of cards. Here’s a demo of what I’m referring to:</p>
 
-<!--more-->
-
-<p>By default, Jekyll allows you to add pages instead of posts by simply <a href="http://jekyllrb.com/docs/pages/">adding folders</a> to the root directory. However, I’m not fond of littering the root directory with lots of extra folders. Instead, I’d prefer to follow the same folder paradigm, which would allow for putting static pages in a <code>_pages</code> directory. Setting this up is actually pretty simple.</p>
-
-<style type="text/css">
-@media screen and (min-width: 50em) {
-  .col-wrap {
-    display: flex;
-  }
-
-  .col-wrap .col {
-    flex: 1;
-    width: 50%;
-  }
-}
-</style>
-
-<section class="col-wrap">
-<div class="col">
-
-<p>We’ll go from this:<br />
-<img src="/assets/images/jekyll-pages/old.png" alt="The old folder structure" /></p>
-
+<div class="codepen">
+  <p data-height="430" data-theme-id="12496" data-slug-hash="PNzepX" data-default-tab="result" data-user="damonbauer" class="codepen">See the Pen <a href="http://codepen.io/damonbauer/pen/PNzepX/">Card Component Demo</a> by Damon Bauer (<a href="http://codepen.io/damonbauer">@damonbauer</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
 </div>
+<p><br /></p>
 
-<div class="col">
+<p>On the Ruby (Rails) side, I’ve got an instance variable, <code>@items</code>, that contains all of the items I want to iterate over. Also, I have a partial that contains the markup for a card. The partial accepts a parameter, <code>is_reversed</code>, that can be <code>true</code> or <code>false</code>. Here’s what that partial include looks like:</p>
 
-<p>to this:<br />
-<img src="/assets/images/jekyll-pages/new.png" alt="The new folder structure" /></p>
+<div class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="cp">&lt;%=</span> <span class="n">render</span> <span class="s2">&quot;components/card&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="ss">item</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="ss">is_reversed</span><span class="p">:</span> <span class="n">reversed</span> <span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span></code></pre></div>
+<p><br /></p>
 
-</div>
-</section>
+<h2 id="getting-pairs">Getting Pairs</h2>
 
-<p>The first thing to do is add a folder called <code>_pages</code> to your site’s root folder (at the same level as <code>_posts</code>, <code>_layouts</code>, etc).</p>
+<p>At this point, I’ve got the front end figured out, and the Rails partial is rendering a card for each item in <code>@items</code>. Now, for every other pair of items in the collection, I want to set <code>is_reversed</code> to <code>true</code>, so I can apply the <code>Card--reversed</code> CSS class to it. Here’s how I figured out how to do that:</p>
 
-<h2 id="update-jekyll-config">Update Jekyll Config</h2>
-<p>The next step is to add your new <code>_pages</code> directory to the list of folders Jekyll will process when building. Modify your <code>_config.yml</code> to list a hash of “includes”:</p>
+<div class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="cp">&lt;%</span> <span class="vi">@items</span><span class="o">.</span><span class="n">each_slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">pair</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span> <span class="cp">-%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%</span> <span class="n">reversed</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">odd?</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%</span> <span class="n">pair</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="cp">-%&gt;</span><span class="x"></span>
+<span class="x">    </span><span class="cp">&lt;%=</span> <span class="n">render</span> <span class="s2">&quot;components/card&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="ss">item</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="ss">is_reversed</span><span class="p">:</span> <span class="n">reversed</span> <span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">-%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">-%&gt;</span><span class="x"></span></code></pre></div>
+<p><br /></p>
 
-<p><code>
-include: ["_pages"]
-</code></p>
+<p>On <code>@items</code>, I call <code>.each_slice(2)</code> <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_slice">(docs)</a>. This iterates over <code>@items</code>, breaking it up into slices of 2 items. Once that’s complete, I store <em>that</em> as an array, so I get an array of arrays, like so:</p>
 
-<p>I follow the pattern of keeping <a href="http://mattgemmell.com/permalinks/">dates out of URLs</a>, and I think you should too. To keep your URL structure as clean as possible, you need to update the <code>permalinks</code> configuration as well. Place this change in <code>_config.yml</code> as well.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span>
+  <span class="o">[</span><span class="no">Item</span><span class="p">,</span> <span class="no">Item</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="no">Item</span><span class="p">,</span> <span class="no">Item</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="no">Item</span><span class="p">,</span> <span class="no">Item</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<span class="o">]</span></code></pre></div>
+<p><br /></p>
 
-<p><code>
-permalink: /:title/
-</code></p>
+<h2 id="flagging-as-reversed">Flagging As “Reversed”</h2>
 
-<p>This will make your site’s URLs succinct and easy to read; in my opinion, there isn’t a reason not to make this simple change.</p>
+<p>So now I have an array whose items are arrays of 2 items each. Since I want to know if the array of 2 items is in an “odd” or “even” position in the parent array (so I can mark it as “reversed” or not), I iterate over the whole array with <code>.each_with_index</code> <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_with_index">(docs)</a>.</p>
 
-<h2 id="build-a-page">Build a Page</h2>
-<p>Now you’re ready to make some pages. In your new <code>_pages</code> directory, create another folder, say <code>about</code>; create an <code>index.html</code> or <code>index.md</code> inside the folder.</p>
+<p>Now, I set a variable, <code>reversed</code>, using a ternary operator. I’m checking to see if the index of the current iteration through the parent array is “odd” (using <code>.odd?</code>). If it is an odd index, I set the <code>reversed</code> variable to <code>true</code>.</p>
 
-<p>In addition to any normal YAML front matter your pages/posts usually needs, you’ll need to add the following:</p>
+<p>After that, I iterate over the pair of items; for each of them, I call the <code>render</code> partial, passing the value of the <code>reversed</code> variable to it.</p>
 
-<p><code>
-permalink: "/about/"
-</code></p>
+<p>Finally, in the partial, I add the <code>Card--reversed</code> class if <code>reversed</code> is true:</p>
 
-<p>Notice the forward slashes before and after the name of the page. They are mandatory in both spots. The permalink should match the name of the folder that this file lives in.</p>
+<div class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="x">&lt;div class=&quot;Card</span><span class="cp">&lt;%=</span> <span class="s2">&quot; Card--reversed&quot;</span> <span class="k">if</span> <span class="n">is_reversed</span> <span class="cp">%&gt;</span><span class="x">&quot;&gt;</span></code></pre></div>
+<p><br /></p>
 
-<h2 id="jekyll-build-or-serve">Jekyll Build (or Serve)</h2>
-<p>The last step is to build or serve your site. You should be familiar with this task, but if you aren’t, open your command line and run <code>jekyll build</code> or <code>jekyll serve</code>. You’ll probably want to attach the <code>--watch</code> flag to either command to automatically process new changes to pages or posts.</p>
+<h2 id="conclusion">Conclusion</h2>
 
-<p>That’s all there is to it! Pretty easy, right? With just a couple of modifications to your <code>_config.yml</code>, you can better organize your site’s pages and folder structure.</p>
+<p>Until this time, I’d never heard of <code>.each_slice</code>. Using it works, but to be honest, this solution doesn’t feel great because I’m doing 3 different <code>each</code> calls in order to add a CSS class. Maybe it could be accomplished with <code>.each_with_index</code> and checking the <code>index</code> against a modulus?</p>
+
+<p>If you have a way to clean this up, I’d love to hear about it - send me a <a href="https:/twitter.com/damon_bauer">tweet</a> or an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#101;&#108;&#108;&#111;&#064;&#100;&#097;&#109;&#111;&#110;&#098;&#097;&#117;&#101;&#114;&#046;&#109;&#101;">email</a>!</p>
+
 
   </article>
 </div>
