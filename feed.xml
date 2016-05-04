@@ -7,6 +7,19 @@
 		<atom:link href="http://damonbauer.me/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Do Better With Flexbox</title>
+				
+				
+					<description>&lt;p&gt;Yesterday, I gave a 30 minute talk about Flexbox to some teammates. In it, I talk about how we can use Flexbox today and look at a few real world examples and compare how to author the example with “traditional” CSS vs Flexbox.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 04 May 2016 00:00:00 -0500</pubDate>
+				<link>http://damonbauer.me/do-better-with-flexbox/</link>
+				<guid isPermaLink="true">http://damonbauer.me/do-better-with-flexbox/</guid>
+			</item>
+		
+			<item>
 				<title>Getting Every Other Pair in a Ruby Array</title>
 				
 				
@@ -125,20 +138,6 @@
 				<pubDate>Sat, 14 Mar 2015 00:00:00 -0500</pubDate>
 				<link>http://damonbauer.me/implementing-svg/</link>
 				<guid isPermaLink="true">http://damonbauer.me/implementing-svg/</guid>
-			</item>
-		
-			<item>
-				<title>Click to Reveal Search Bar</title>
-				
-				
-					<description>&lt;p&gt;In the interest in of feature parity between desktop &amp;amp; mobile experiences, I’ve recently been working on adding search to the mobile view of my employer’s website, &lt;a href=&quot;http://daveramsey.com&quot;&gt;daveramsey.com&lt;/a&gt;. The following is an explanation of why and how I am going about adding an click-to-reveal search bar on small screens.
-&lt;!--more--&gt;&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Fri, 20 Feb 2015 00:00:00 -0600</pubDate>
-				<link>http://damonbauer.me/click-to-reveal-search-bar/</link>
-				<guid isPermaLink="true">http://damonbauer.me/click-to-reveal-search-bar/</guid>
 			</item>
 		
 	</channel>
