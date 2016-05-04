@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://damonbauer.me/do-better-with-flexbox/</loc>
+    <lastmod>2016-05-04T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://damonbauer.me/every-other-pair-in-ruby-array/</loc>
     <lastmod>2016-03-11T00:00:00-06:00</lastmod>
   </url>
