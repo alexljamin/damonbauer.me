@@ -33,6 +33,19 @@
 			</item>
 		
 			<item>
+				<title>Why npm scripts?</title>
+				
+				
+					<description>&lt;p&gt;After starting to migrate my Gulp tasks to npm, I thought it would be nice to document what I found; it turned out that Chris over at CSS Tricks was looking for just such a post. He gave me a chance write for his blog (a huge honor for me!).&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 12 Feb 2016 00:00:00 -0600</pubDate>
+				<link>http://damonbauer.me/why-npm-scripts/</link>
+				<guid isPermaLink="true">http://damonbauer.me/why-npm-scripts/</guid>
+			</item>
+		
+			<item>
 				<title>Migrating code from ES3 &amp;rarr; ES5 &amp;rarr; ES6</title>
 				
 				
@@ -124,20 +137,6 @@
 				<pubDate>Sat, 28 Mar 2015 00:00:00 -0500</pubDate>
 				<link>http://damonbauer.me/organizing-jekyll-pages/</link>
 				<guid isPermaLink="true">http://damonbauer.me/organizing-jekyll-pages/</guid>
-			</item>
-		
-			<item>
-				<title>Implementing an SVG Icon System</title>
-				
-				
-					<description>&lt;p&gt;In the last few months, &lt;abbr title=&quot;Scalable Vector Graphics&quot;&gt;SVG&lt;/abbr&gt; has started to once again gain traction in the world of front end development&lt;sup&gt;&lt;a href=&quot;#footnote-1&quot; name=&quot;fn-1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, thanks in part to the amazing work of some &lt;a href=&quot;https://css-tricks.com/mega-list-svg-information/&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;http://sarasoueidan.com/articles/index.html&quot;&gt;smart&lt;/a&gt; &lt;a href=&quot;http://tutorials.jenkov.com/svg/svg-and-css.html&quot;&gt;people&lt;/a&gt;. For some time now, I’ve wanted a way to replace icon fonts with more a semantic, accessible and performant solution while maintaining the resolution independence and ease of use that comes with using them. I’ve been exploring the world of SVG and trying to find a solution that is easy to implement &amp;amp; maintain, light, and cross-browser compatible.
-&lt;!--more--&gt;&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Sat, 14 Mar 2015 00:00:00 -0500</pubDate>
-				<link>http://damonbauer.me/implementing-svg/</link>
-				<guid isPermaLink="true">http://damonbauer.me/implementing-svg/</guid>
 			</item>
 		
 	</channel>
