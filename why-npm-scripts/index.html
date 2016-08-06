@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explaining the how and why behind my Sass folder structure.">
-  <title>Scss/Sass Folder Structure | Damon Bauer</title>
+  <meta name="description" content="I wrote a post about npm scripts over at CSS Tricks.">
+  <title>Why npm scripts? | Damon Bauer</title>
   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="/favicon.ico" rel="icon" type="image/x-icon">
-  <link rel="canonical" href="http://damonbauer.me/scss-folder-structure/">
+  <link rel="canonical" href="http://damonbauer.me/why-npm-scripts/">
   <link href="http://feeds.feedburner.com/damonbauer" rel="alternate" type="application/atom+xml">
   <style type="text/css">*,*:before,*:after{padding:0;margin:0;box-sizing:border-box}html{overflow-y:scroll;background-color:#373a4a;color:#c4c4c4}body{margin:0 auto;max-width:36em;padding:0 1em;font-family:monospace;font-size:22px}@media screen and (min-width: 50em){body{padding:0}}p,ul,ol{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem}a{border-bottom:1px solid transparent;text-decoration:none;color:#e64845}a:hover,a:focus{border-bottom-color:#e64845;outline-color:#e64845}b,strong,h1,h2,h3,header a{font-weight:700}img{max-width:100%}figure{margin-bottom:1.5rem}figcaption{font-size:18px;font-size:.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;font-style:italic}blockquote{margin-bottom:1.5em;padding:0.3125em 0.625em;font-style:italic;background:#c4c4c4;color:#373a4a}blockquote p{margin:0}::-moz-selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}::selection{background-color:rgba(230,72,69,0.8);color:#c4c4c4}.Masthead{clear:both;padding:1.5em 0 2.5em;text-align:center}.Masthead a{font-size:42px;font-size:1.90909rem;line-height:.9048;margin-bottom:38px;margin-bottom:1.72727rem;display:inline-block;border-bottom:2px solid transparent;font-weight:bold;letter-spacing:3px}@media screen and (min-width: 50em){.Masthead a{font-size:64px;font-size:2.90909rem;line-height:.5938;margin-bottom:38px;margin-bottom:1.72727rem}}.Masthead a:hover,.Masthead a:focus{border-bottom:2px solid #e64845}.Masthead span{font-size:22px;font-size:1rem;line-height:1.7273;margin-bottom:38px;margin-bottom:1.72727rem;display:block;margin-bottom:0;font-style:italic;color:#c4c4c4}@media screen and (max-width: 25em){.Masthead span{letter-spacing:-1px}}.post-list,.post{margin:0;padding:0;list-style:none}.post-list li{position:relative;margin-bottom:3em}.post-list li:last-of-type:after{display:none}.post-list li:after{position:absolute;bottom:-1em;left:50%;margin-left:-1em;line-height:1;font-size:2em;content:"\2026"}.post-header{display:block;margin-bottom:1em}.post-title{font-size:42px;font-size:1.90909rem;line-height:.9048;margin-bottom:38px;margin-bottom:1.72727rem;margin-bottom:0}.post-meta{display:block;font-size:18px;font-size:.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem}pre{font-size:18px;font-size:.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.5em;color:#373a4a}p code,li code{font-size:18px;font-size:.81818rem;line-height:2.1111;margin-bottom:38px;margin-bottom:1.72727rem;padding:0.25em;background:rgba(255,255,255,0.75);color:#373a4a}.post ul,.post ol{margin-left:2em}.post ul ul{margin-bottom:0}.post h2{margin:2em 0 0.5em}abbr{border-bottom:1px dotted #585B5E}hr{height:1px;border:0;border-bottom:1px dotted #585B5E}.iframe-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}footer{clear:both;padding:1rem 0}footer ul{margin:0;padding:0;list-style:none;text-align:right}footer ul li{display:inline-block;margin-left:1rem}footer ul a{display:block;width:1.5rem;height:1.5rem;font-size:0;border-bottom:0;color:transparent}footer ul a:hover svg path,footer ul a:focus svg path{fill:#e64845;opacity:1}footer ul svg path{fill:#c4c4c4;opacity:0.5}.highlight{background:rgba(255,255,255,0.75);max-width:100%;overflow-x:scroll}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{background-color:#fdd}.highlight .gd .x{background-color:#faa}.highlight .gi{background-color:#dfd}.highlight .gi .x{background-color:#afa}.highlight .go{color:#888}.highlight .gu{color:#aaa}.highlight .k,.highlight .o,.highlight .cp,.highlight .cs,.highlight .gs,.highlight .kc,.highlight .kd,.highlight .kp,.highlight .kr,.highlight .kt,.highlight .nc,.highlight .ne,.highlight .nf,.highlight .ow{font-weight:bold}.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs,.highlight .ge{font-style:italic}.highlight .gd,.highlight .gd .x,.highlight .gi,.highlight .gi .x{color:#000}.highlight .gr,.highlight .gt{color:#a00}.highlight .gp,.highlight .nn{color:#555}.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}.highlight .c,.highlight .cm,.highlight .c1{color:#998}.highlight .cp,.highlight .cs,.highlight .gh,.highlight .bp{color:#999}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .kt,.highlight .nc{color:#458}.highlight .vc,.highlight .vg,.highlight .vi,.highlight .nv,.highlight .na,.highlight .no{color:#008080}.highlight .ne,.highlight .nf{color:#900}.highlight .nb{color:#0086B3}.highlight .ni{color:#800080}.highlight .nt{color:#000080}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}
 </style>
@@ -25,56 +25,15 @@
     <main role="main">
       <div class="post">
   <header class="post-header">
-    <h1 class="post-title">Scss/Sass Folder Structure</h1>
-    <span class="post-meta">March 21, 2014</span>
+    <h1 class="post-title">Why npm scripts?</h1>
+    <span class="post-meta">February 12, 2016</span>
   </header>
 
   <article class="post-content">
-    <p>The following is how I set up my Sass folders for my projects. This is a jumping off point for new projects, so I am at liberty to add or remove Sass files as I see fit. By no means is it an end-all solution, but I find it works well to get going quickly. I feel like there is definitely room for improvement, so please feel free to chime in with suggestions!</p>
+    <p>After starting to migrate my Gulp tasks to npm, I thought it would be nice to document what I found; it turned out that Chris over at CSS Tricks was looking for just such a post. He gave me a chance write for his blog (a huge honor for me!).</p>
 
-<!--more-->
+<p><a href="https://css-tricks.com/why-npm-scripts/">You can read the post here</a>.</p>
 
-<h2 id="the-structure">The Structure</h2>
-<p>Inside of my main <code>/sass/</code> folder lives:</p>
-
-<ul>
-  <li>home.scss</li>
-  <li>style.scss</li>
-  <li>sub.scss</li>
-  <li>partials/</li>
-</ul>
-
-<p>The three <code>.scss</code> files are what get compiled to CSS and subsequently what I link to in my HTML. Their contents are simply <code>@import</code> statements of Sass partials, which is where most of the files I use live. I really like breaking things into logical chunks; for instance, I know if I have to edit navigation in the header, I simply go to the header navigation partial and edit. Having things in modular pieces keeps things organized and has less of a chance for files to get overly cluttered.</p>
-
-<h2 id="partials">Partials</h2>
-<p>The /partials folder looks like this:</p>
-
-<ul>
-  <li>home/
-    <ul>
-      <li><strong>_content.scss</strong>: Content that is unique to the home page.</li>
-    </ul>
-  </li>
-  <li>sub/
-    <ul>
-      <li><strong>_content.scss</strong>: Content that is unique to the sub pages.</li>
-    </ul>
-  </li>
-  <li><strong>_content.scss</strong>: Any content areas that will are consistent throughout the entire site.</li>
-  <li><strong>_extends.scss</strong>: Holds any <code>@extend</code> that I might be using. Typically I utilize this by adding fonts to a silent class, like <code>%OpenSans</code>.</li>
-  <li><strong>_footer.scss</strong>: Styles for the footer.</li>
-  <li><strong>_global.scss</strong>: Contains things like global box sizing, standard link <code>:hover</code> &amp; <code>:focus</code> styles, etc.</li>
-  <li><strong>_header.scss</strong>: Styles for the header.</li>
-  <li><strong>_header_navigation.scss</strong>: Styles for header navigation. This gets imported inside of <code>_header.scss</code>.</li>
-  <li><strong>_mixins.scss</strong>: Mixins that I have gleaned or written.</li>
-  <li><strong>_variables.scss</strong>: Colors, breakpoint sizes, and Susy grid configurations are all things you can find here.
-That’s pretty much it. Again, this is just my starting point. I usually end up with a few more partials, such as a <code>_home_slider.scss</code>, <code>_forms.scss</code> or <code>_print.scss</code>.</li>
-</ul>
-
-<h2 id="a-word-of-caution">A Word of Caution</h2>
-<p>Like most things, I’ve found that moderation is key. Over-fragmenting (is that a thing?) my partial files usually causes headaches down the road, especially when coming back to a project to make changes. For example, I was previously creating a <code>_layout.scss</code> partial and putting widths, floats, borders, etc. on elements (such as the header).</p>
-
-<p>Since <code>_layout.scss</code> was intended strictly for building the structure of the page, I felt “dirty” putting decoration styles in the same location, so I had to create a <code>_header.scss</code> partial. Then I would have to reference <code>header { ... }</code> multiple times in multiple files and keep track of where I put certain styles (when do I consider a border layout vs. decoration?). I’ve found it easier and faster to put everything dealing with the header (layout, typography, decoration, etc) into one partial.</p>
 
   </article>
 </div>
